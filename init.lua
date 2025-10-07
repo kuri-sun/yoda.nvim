@@ -21,21 +21,8 @@ function M.setup(opts)
 	-- Merge user options with defaults
 	M.config = vim.tbl_deep_extend("force", M.config, opts or {})
 
-	-- Apply transparent background if requested
-	if M.config.transparent_background then
-		local colors = require("yoda.colors").palette
-		colors.bg = "NONE"
-		colors.bg_dark = "NONE"
-		colors.bg_light = "NONE"
-	end
-
-	-- Apply custom color overrides
-	if M.config.colors and type(M.config.colors) == "table" then
-		local colors = require("yoda.colors").palette
-		for key, value in pairs(M.config.colors) do
-			colors[key] = value
-		end
-	end
+	-- Load the colorscheme
+	M.load()
 end
 
 -- Load the colorscheme
@@ -49,23 +36,39 @@ function M.load()
 	-- Set the colorscheme name (this must come after applying highlights)
 	vim.g.colors_name = "yoda"
 
-	-- Apply style overrides based on configuration
+	-- Apply configuration-based overrides
 	local set = vim.api.nvim_set_hl
 	local colors = require("yoda.colors").palette
 
+	-- Apply transparent background if requested
+	if M.config.transparent_background then
+		set(0, "Normal", { fg = colors.fg, bg = "NONE" })
+		set(0, "NormalFloat", { fg = colors.fg, bg = "NONE" })
+		set(0, "NormalNC", { fg = colors.fg, bg = "NONE" })
+		set(0, "SignColumn", { fg = colors.fg, bg = "NONE" })
+		set(0, "EndOfBuffer", { fg = colors.bg_light, bg = "NONE" })
+	end
+
+	-- Apply custom color overrides
+	if M.config.colors and type(M.config.colors) == "table" then
+		for key, value in pairs(M.config.colors) do
+			colors[key] = value
+		end
+	end
+
 	-- Handle italic comments
 	if not M.config.italic_comments then
-		set(0, "Comment", { fg = colors.gray, italic = false })
-		set(0, "@comment", { fg = colors.gray, italic = false })
-		set(0, "@comment.documentation", { fg = colors.gray, italic = false })
+		set(0, "Comment", { fg = colors.dim, italic = false })
+		set(0, "@comment", { fg = colors.dim, italic = false })
+		set(0, "@comment.documentation", { fg = colors.dim, italic = false })
 	end
 
 	-- Handle bold keywords
 	if not M.config.bold_keywords then
-		set(0, "Keyword", { fg = colors.blue, bold = false })
-		set(0, "@keyword", { fg = colors.blue, bold = false })
-		set(0, "Statement", { fg = colors.blue, bold = false })
-		set(0, "Conditional", { fg = colors.blue, bold = false })
+		set(0, "Keyword", { fg = colors.pink, bold = false })
+		set(0, "@keyword", { fg = colors.pink, bold = false })
+		set(0, "Statement", { fg = colors.pink, bold = false })
+		set(0, "Conditional", { fg = colors.pink, bold = false })
 	end
 
 	-- Handle underline match paren
@@ -126,4 +129,3 @@ function M.enable_dev_mode()
 end
 
 return M
-
