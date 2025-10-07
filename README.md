@@ -1,6 +1,4 @@
-# 🌿 yoda.nvim
-
-> A calm and minimal Neovim theme inspired by wisdom and focus.
+# yoda.nvim
 
 ![Preview](media/preview.png)
 
@@ -18,6 +16,7 @@
 ### 🚀 Installation
 
 #### **Lazy.nvim**
+
 ```lua
 {
   "kuri-sun/yoda.nvim",
@@ -30,6 +29,7 @@
 ```
 
 #### **Packer**
+
 ```lua
 use({
   "kuri-sun/yoda.nvim",
@@ -43,10 +43,10 @@ use({
 
 ### 🧠 Development
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for development guidelines.
+[CONTRIBUTING.md](CONTRIBUTING.md)
 
 ---
 
 ### 🪪 License
 
-MIT © 2025 kuri-sun
+MIT
