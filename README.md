@@ -37,12 +37,4 @@ use({
 
 ---
 
-### 🧠 Development
-
-[CONTRIBUTING.md](CONTRIBUTING.md)
-
----
-
-### 🪪 License
-
-MIT
+### Extra (coming soon...)
