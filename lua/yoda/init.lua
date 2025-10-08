@@ -125,6 +125,9 @@ function M.toggle_theme()
 	M.load()
 end
 
+-- Lualine helper
+M.lualine = require("yoda.lualine")
+
 -- Auto-command to reload theme on save during development
 function M.enable_dev_mode()
 	vim.api.nvim_create_autocmd("BufWritePost", {

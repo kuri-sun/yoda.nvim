@@ -46,45 +46,45 @@ local palettes = {
 	},
 	light = {
 		-- Core colors
-		bg = "#fafff5",
-		fg = "#2a4a2a",
-		white = "#1a1a1a",
-		accent = "#00aa55",
-		brown = "#8b5a2b",
-		brown_dim = "#6b4a1b",
-		interface = "#2a5a7a",
-		pink = "#a64a7a",
-		dim = "#6a8a6a",
-		subtle = "#4a6a5a",
-		bright = "#000000",
-		error = "#cc3333",
-		warning = "#cc9900",
+		bg = "#d8ddd8", -- Main background (middle gradient)
+		fg = "#2d5016", -- Dark green for main text
+		white = "#1a1a1a", -- Dark for strings
+		accent = "#00aa44", -- Bright green accent
+		brown = "#d17b00", -- Bright orange-brown for functions
+		brown_dim = "#b8860b", -- Goldenrod
+		interface = "#4682b4", -- Steel blue for types
+		pink = "#d1447e", -- Bright pink for keywords
+		dim = "#7a997a", -- Light green for comments
+		subtle = "#5a7a5a", -- Medium green for punctuation
+		bright = "#000000", -- Pure black for emphasis
+		error = "#dc143c", -- Bright crimson
+		warning = "#ff8c00", -- Bright orange
 
-		-- Background variations
-		bg_dark = "#f0f5f0",
-		bg_light = "#ffffff",
-		bg_highlight = "#e8f0e8",
-		border = "#c0d0c0",
-		selection = "#d0e8d8",
-		cursor_line = "#f0f5f0",
-		line_number = "#a0b0a0",
+		-- Background variations (gradient effect)
+		bg_dark = "#c0c8c0", -- Darker gradient step
+		bg_light = "#e0e8e0", -- Lighter gradient step
+		bg_highlight = "#b8d0b8", -- Subtle green highlight
+		border = "#a0c0a0", -- Medium green border
+		selection = "#a8d8a8", -- Light green selection
+		cursor_line = "#d4d9d4", -- Subtle gradient
+		line_number = "#88a888", -- Muted green
 
 		-- Git/Diff
-		diff_add = "#e0f0e0",
-		diff_delete = "#f0e0e0",
-		diff_change = "#f0f0d0",
-		diff_text = "#e8e8c0",
+		diff_add = "#d0f0d0", -- Light green
+		diff_delete = "#f0d0d0", -- Light red
+		diff_change = "#f0f0c0", -- Light yellow
+		diff_text = "#e0e0a0", -- Slightly darker yellow
 
 		-- Traditional color mappings
-		red = "#cc3333",
-		yellow = "#cc9900",
-		gray = "#6a8a6a",
-		green = "#00aa55",
-		cyan = "#2a4a2a",
-		magenta = "#a64a7a",
-		orange = "#6b4a1b",
-		blue = "#00aa55",
-		fg_dark = "#4a6a5a",
+		red = "#dc143c",
+		yellow = "#ff8c00",
+		gray = "#7a997a",
+		green = "#00aa44",
+		cyan = "#2d5016",
+		magenta = "#d1447e",
+		orange = "#d17b00",
+		blue = "#4682b4",
+		fg_dark = "#5a7a5a",
 		fg_light = "#1a1a1a",
 	}
 }
