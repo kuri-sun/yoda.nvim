@@ -1,6 +1,7 @@
 local M = {}
 
 M.config = {
+	theme = "dark",
 	italic_comments = true,
 	transparent_background = false,
 	bold_keywords = true,
@@ -22,6 +23,9 @@ end
 function M.load()
 	-- Set termguicolors for true color support
 	vim.o.termguicolors = true
+
+	-- Setup colors with theme
+	require("yoda.colors").setup(M.config)
 
 	-- Apply highlights
 	require("yoda.highlights").setup()
@@ -109,6 +113,16 @@ function M.reload()
 
 	-- Reload and setup
 	require("yoda").load()
+end
+
+function M.set_theme(theme)
+	M.config.theme = theme
+	M.load()
+end
+
+function M.toggle_theme()
+	M.config.theme = M.config.theme == "dark" and "light" or "dark"
+	M.load()
 end
 
 -- Auto-command to reload theme on save during development

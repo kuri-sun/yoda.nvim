@@ -1,5 +1,6 @@
-local colors = require("yoda.colors").palette
 local config = require("yoda").config
+require("yoda.colors").setup(config)
+local colors = require("yoda.colors").palette
 
 local bg = colors.bg
 if config.transparent_background then

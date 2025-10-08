@@ -7,6 +7,7 @@
 ### ✨ Features
 
 - Muted green palette for focused, balanced editing
+- **Dark and light theme variants**
 - Minimal UI with clear syntax contrast
 - Tree-sitter & LSP semantic highlighting support
 - Works with **Lazy.nvim**, **Packer**, and **Plug**
@@ -52,6 +53,25 @@ use({
 ---
 
 ### ⚙️ Configuration
+
+#### **Theme Variants**
+
+```lua
+-- Dark theme (default)
+require("yoda").setup({
+  theme = "dark",
+})
+
+-- Light theme
+require("yoda").setup({
+  theme = "light",
+})
+
+-- Toggle between themes
+vim.keymap.set("n", "<leader>tt", function()
+  require("yoda").toggle_theme()
+end, { desc = "Toggle theme" })
+```
 
 #### **Lualine Setup**
 
