@@ -1,18 +1,11 @@
 local M = {}
 
--- Default configuration
 M.config = {
-	-- Enable/disable italic comments
 	italic_comments = true,
-	-- Enable/disable background transparency
 	transparent_background = false,
-	-- Enable/disable bold keywords
 	bold_keywords = true,
-	-- Enable/disable underline for matching parentheses
 	underline_match_paren = true,
-	-- Custom color overrides (merged with default palette)
 	colors = {},
-	-- Custom highlight overrides (applied after default highlights)
 	highlights = {},
 }
 

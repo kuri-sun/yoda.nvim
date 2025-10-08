@@ -1,8 +1,6 @@
--- Lualine theme for yoda.nvim
 local colors = require("yoda.colors").palette
 local config = require("yoda").config
 
--- Apply transparent background if configured
 local bg = colors.bg
 if config.transparent_background then
 	bg = "NONE"

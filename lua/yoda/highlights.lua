@@ -10,7 +10,7 @@ function M.setup()
 		vim.cmd("syntax reset")
 	end
 
-	-- Editor highlights (minimal approach)
+	-- Editor
 	set(0, "Normal", { fg = colors.fg, bg = colors.bg })
 	set(0, "NormalNC", { fg = colors.fg, bg = colors.bg_dark })
 	set(0, "NormalFloat", { fg = colors.fg, bg = colors.bg_light })
@@ -65,7 +65,7 @@ function M.setup()
 	set(0, "VertSplit", { fg = colors.border })
 	set(0, "WinSeparator", { fg = colors.border })
 
-	-- Syntax highlights (green theme with brown accents)
+	-- Syntax
 	set(0, "Comment", { fg = colors.dim, italic = true })
 	set(0, "Constant", { fg = colors.bright })
 	set(0, "String", { fg = colors.white })
@@ -108,7 +108,7 @@ function M.setup()
 	set(0, "Error", { fg = colors.error })
 	set(0, "Todo", { fg = colors.accent, bold = true })
 
-	-- Treesitter highlights (light green base with white strings)
+	-- Treesitter
 	set(0, "@variable", { fg = colors.fg })
 	set(0, "@variable.builtin", { fg = colors.bright })
 	set(0, "@variable.parameter", { fg = colors.fg })
@@ -199,7 +199,7 @@ function M.setup()
 	set(0, "@diff.minus", { fg = colors.error })
 	set(0, "@diff.delta", { fg = colors.warning })
 
-	-- LSP highlights (minimal)
+	-- LSP
 	set(0, "DiagnosticError", { fg = colors.error })
 	set(0, "DiagnosticWarn", { fg = colors.warning })
 	set(0, "DiagnosticInfo", { fg = colors.fg })
@@ -232,7 +232,7 @@ function M.setup()
 	set(0, "LspCodeLensSeparator", { fg = colors.dim })
 	set(0, "LspSignatureActiveParameter", { fg = colors.accent })
 
-	-- Diff highlights (core vim)
+	-- Diff
 	set(0, "DiffAdd", { bg = colors.diff_add })
 	set(0, "DiffChange", { bg = colors.diff_change })
 	set(0, "DiffDelete", { bg = colors.diff_delete })

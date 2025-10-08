@@ -1,7 +1,6 @@
 local M = {}
 
 function M.highlights(colors, set)
-	-- Neo-tree file explorer highlights
 	set(0, "NeoTreeNormal", { fg = colors.fg, bg = colors.bg })
 	set(0, "NeoTreeNormalNC", { fg = colors.fg, bg = colors.bg_dark })
 	set(0, "NeoTreeVertSplit", { fg = colors.border })
