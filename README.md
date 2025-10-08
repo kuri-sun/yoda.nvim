@@ -57,7 +57,7 @@ require("yoda").setup({
     theme = "dark", -- use "light" for the light variant (default: "dark")
 
     -- Enable transparent background
-    transparent = false,
+    transparent_background = false,
 
     -- Override highlight groups with your own colour values
     highlights = {
@@ -129,5 +129,5 @@ require('lualine').setup {
 ### 🎨 Extras
 
 - **[Lazygit](extras/lazygit/)**
-- **[Alacritty](extras/alacritty/)** 
+- **[Alacritty](extras/alacritty/)**
 - **[Tmux](extras/tmux/)**
