@@ -1,0 +1,100 @@
+# ──────────────────────────────────────────────
+# Master Yoda Theme Terminal — Star Wars Lightsaber Green Edition
+# ──────────────────────────────────────────────
+
+[window]
+opacity = 0.60
+blur = true
+decorations = "none"
+dynamic_padding = true
+padding = { x = 12, y = 10 }
+startup_mode = "Windowed"
+
+[font]
+normal = { family = "JetBrains Mono", style = "Medium" }
+bold = { family = "JetBrains Mono", style = "Bold" }
+italic = { family = "JetBrains Mono", style = "Italic" }
+size = 13.5
+
+[env]
+TERM = "xterm-256color"
+
+[cursor]
+style = "Beam"
+thickness = 0.15
+blink_interval = 500
+unfocused_hollow = true
+
+[bell]
+animation = "EaseOutExpo"
+color = "#00ff88"
+duration = 0
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[mouse]
+hide_when_typing = true
+
+[window.class]
+general = "Alacritty"
+instance = "alacritty"
+
+# ──────────────────────────────────────────────
+# 🎨 Color Palette — Lightsaber Green + Tech Noir
+# ──────────────────────────────────────────────
+
+[colors.primary]
+background = "#050705"     # ultra-dark base, matte
+foreground = "#b9f6ca"     # mint-laser text tone
+
+[colors.cursor]
+text = "#050705"
+cursor = "#00ff99"         # vivid saber core green
+
+[colors.selection]
+text = "#050705"
+background = "#00ff99"
+
+[colors.search.matches]
+foreground = "#050705"
+background = "#00ff99"
+
+[colors.normal]
+black   = "#0a0d0a"
+red     = "#ff4d4d"
+green   = "#00ff99"
+yellow  = "#ffee58"
+blue    = "#00bfff"
+magenta = "#cc66ff"
+cyan    = "#00ffe1"
+white   = "#e5e5e5"
+
+[colors.bright]
+black   = "#1b1b1b"
+red     = "#ff6666"
+green   = "#66ffb2"
+yellow  = "#fff176"
+blue    = "#33ccff"
+magenta = "#d580ff"
+cyan    = "#80fff4"
+white   = "#ffffff"
+
+# ──────────────────────────────────────────────
+# 🧠 Developer Experience Enhancements
+# ──────────────────────────────────────────────
+
+[colors.hints.start]
+foreground = "#050705"
+background = "#00ff99"
+
+[colors.hints.end]
+foreground = "#00ff99"
+background = "#050705"
+
+[keyboard]
+bindings = [
+  { key = "V", mods = "Control", action = "Paste" },
+  { key = "C", mods = "Control", action = "Copy" },
+]
