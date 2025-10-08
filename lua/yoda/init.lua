@@ -85,6 +85,9 @@ function M.load()
 		end
 	end
 
+	-- Reload lualine if it's loaded
+	require("yoda.util").reload_lualine()
+
 	-- Set terminal colors
 	vim.g.terminal_color_0 = colors.bg_dark
 	vim.g.terminal_color_1 = colors.red

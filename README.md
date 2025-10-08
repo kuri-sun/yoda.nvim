@@ -21,6 +21,7 @@
 | [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)              | [telescope.lua](lua/yoda/plugins/telescope.lua) |
 | [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)                                 | [cmp.lua](lua/yoda/plugins/cmp.lua)             |
 | [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)                     | [gitsigns.lua](lua/yoda/plugins/gitsigns.lua)   |
+| [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)                    | [lualine.lua](lua/yoda/plugins/lualine.lua)     |
 | [indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim) | [misc.lua](lua/yoda/plugins/misc.lua)           |
 | [snacks.nvim](https://github.com/folke/snacks.nvim)                             | [misc.lua](lua/yoda/plugins/misc.lua)           |
 | [dashboard-nvim](https://github.com/nvimdev/dashboard-nvim)                     | [misc.lua](lua/yoda/plugins/misc.lua)           |
@@ -46,6 +47,23 @@
 use({
   "kuri-sun/yoda.nvim",
 })
+```
+
+---
+
+### ⚙️ Configuration
+
+#### **Lualine Setup**
+
+To use the yoda theme with lualine:
+
+```lua
+require('lualine').setup {
+  options = {
+    theme = 'yoda',
+    -- ... other lualine options
+  }
+}
 ```
 
 ---

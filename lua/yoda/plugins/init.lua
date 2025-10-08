@@ -21,3 +21,4 @@ function M.setup(colors, set)
 end
 
 return M
+
