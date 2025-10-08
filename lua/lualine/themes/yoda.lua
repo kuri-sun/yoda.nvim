@@ -11,9 +11,9 @@ end
 local yoda = {
 	normal = {
 		a = { fg = colors.subtle, bg = bg },
-		b = { fg = colors.fg, bg = bg },
-		c = { fg = colors.subtle, bg = bg },
-		x = { fg = colors.subtle, bg = bg },
+		b = { fg = colors.accent, bg = bg },
+		c = { fg = colors.white, bg = bg },
+		x = { fg = colors.white, bg = bg },
 		y = { fg = colors.interface, bg = bg },
 		z = { fg = colors.dim, bg = bg },
 	},
