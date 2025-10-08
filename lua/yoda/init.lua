@@ -8,6 +8,16 @@ M.config = {
 	underline_match_paren = true,
 	colors = {},
 	highlights = {},
+	
+	-- Disable or enable colorscheme extensions
+	extensions = {
+		telescope = true,
+		neo_tree = true,
+		nvim_tree = true,
+		cmp = true,
+		gitsigns = true,
+		misc = true,
+	},
 }
 
 -- Setup function to configure the theme
