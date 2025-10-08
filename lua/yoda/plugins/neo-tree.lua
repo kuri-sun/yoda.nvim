@@ -46,7 +46,7 @@ function M.highlights(colors, set)
 
 	-- Other UI elements
 	set(0, "NeoTreeSignColumn", { fg = colors.dim, bg = colors.bg })
-	set(0, "NeoTreeCursorLine", { bg = colors.cursor_line })
+	set(0, "NeoTreeCursorLine", { bg = "NONE" })
 	set(0, "NeoTreeBufferNumber", { fg = colors.dim })
 	set(0, "NeoTreeWindowsHidden", { fg = colors.dim })
 	set(0, "NeoTreeStats", { fg = colors.dim })

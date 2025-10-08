@@ -18,7 +18,7 @@ function M.setup()
 	set(0, "FloatTitle", { fg = colors.bright, bg = colors.bg_light })
 
 	set(0, "Cursor", { fg = colors.bg, bg = colors.accent })
-	set(0, "CursorLine", { bg = colors.cursor_line })
+	set(0, "CursorLine", { bg = "NONE" })
 	set(0, "CursorLineNr", { fg = colors.fg })
 	set(0, "LineNr", { fg = colors.line_number })
 
