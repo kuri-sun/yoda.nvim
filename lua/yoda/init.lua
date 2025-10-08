@@ -16,6 +16,12 @@ M.config = {
 		nvim_tree = true,
 		cmp = true,
 		gitsigns = true,
+		snacks = true,
+		netrw = true,
+		todo_comments = true,
+		indent_blankline = true,
+		dashboard = true,
+		which_key = true,
 		misc = true,
 	},
 }
