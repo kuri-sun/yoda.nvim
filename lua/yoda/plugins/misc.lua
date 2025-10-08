@@ -33,3 +33,4 @@ function M.highlights(colors, set)
 end
 
 return M
+

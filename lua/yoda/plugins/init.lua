@@ -7,7 +7,6 @@ local plugins = {
 	"telescope",
 	"cmp",
 	"gitsigns",
-	"lazygit",
 	"misc",
 }
 

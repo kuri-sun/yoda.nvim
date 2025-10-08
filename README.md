@@ -14,18 +14,17 @@
 <details>
 <summary><b>🔌 Supported Plugins</b></summary>
 
-| Plugin | Highlights |
-|--------|------------|
-| [neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim) | [neo-tree.lua](lua/yoda/plugins/neo-tree.lua) |
-| [nvim-tree.lua](https://github.com/nvim-tree/nvim-tree.lua) | [nvim-tree.lua](lua/yoda/plugins/nvim-tree.lua) |
-| [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) | [telescope.lua](lua/yoda/plugins/telescope.lua) |
-| [nvim-cmp](https://github.com/hrsh7th/nvim-cmp) | [cmp.lua](lua/yoda/plugins/cmp.lua) |
-| [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) | [gitsigns.lua](lua/yoda/plugins/gitsigns.lua) |
-| [indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim) | [misc.lua](lua/yoda/plugins/misc.lua) |
-| [snacks.nvim](https://github.com/folke/snacks.nvim) | [misc.lua](lua/yoda/plugins/misc.lua) |
-| [dashboard-nvim](https://github.com/nvimdev/dashboard-nvim) | [misc.lua](lua/yoda/plugins/misc.lua) |
-| [which-key.nvim](https://github.com/folke/which-key.nvim) | [misc.lua](lua/yoda/plugins/misc.lua) |
-| [lazygit.nvim](https://github.com/kdheepak/lazygit.nvim) | [lazygit.lua](lua/yoda/plugins/lazygit.lua) |
+| Plugin                                                                          | Highlights                                      |
+| ------------------------------------------------------------------------------- | ----------------------------------------------- |
+| [neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim)                 | [neo-tree.lua](lua/yoda/plugins/neo-tree.lua)   |
+| [nvim-tree.lua](https://github.com/nvim-tree/nvim-tree.lua)                     | [nvim-tree.lua](lua/yoda/plugins/nvim-tree.lua) |
+| [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)              | [telescope.lua](lua/yoda/plugins/telescope.lua) |
+| [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)                                 | [cmp.lua](lua/yoda/plugins/cmp.lua)             |
+| [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)                     | [gitsigns.lua](lua/yoda/plugins/gitsigns.lua)   |
+| [indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim) | [misc.lua](lua/yoda/plugins/misc.lua)           |
+| [snacks.nvim](https://github.com/folke/snacks.nvim)                             | [misc.lua](lua/yoda/plugins/misc.lua)           |
+| [dashboard-nvim](https://github.com/nvimdev/dashboard-nvim)                     | [misc.lua](lua/yoda/plugins/misc.lua)           |
+| [which-key.nvim](https://github.com/folke/which-key.nvim)                       | [misc.lua](lua/yoda/plugins/misc.lua)           |
 
 </details>
 
