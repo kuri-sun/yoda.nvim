@@ -31,14 +31,14 @@ function M.load()
 	vim.o.termguicolors = true
 
 	-- Apply highlights
-	require("yoda.highlights").setup()
+	require("highlights").setup()
 
 	-- Set the colorscheme name (this must come after applying highlights)
 	vim.g.colors_name = "yoda"
 
 	-- Apply configuration-based overrides
 	local set = vim.api.nvim_set_hl
-	local colors = require("yoda.colors").palette
+	local colors = require("colors").palette
 
 	-- Apply transparent background if requested
 	if M.config.transparent_background then
@@ -107,13 +107,12 @@ end
 -- Provide a convenient reload function for development
 function M.reload()
 	-- Clear the module cache
-	package.loaded["yoda"] = nil
-	package.loaded["yoda.colors"] = nil
-	package.loaded["yoda.highlights"] = nil
-	package.loaded["yoda.init"] = nil
+	package.loaded["init"] = nil
+	package.loaded["colors"] = nil
+	package.loaded["highlights"] = nil
 
 	-- Reload and setup
-	require("yoda").load()
+	require("init").load()
 end
 
 -- Auto-command to reload theme on save during development

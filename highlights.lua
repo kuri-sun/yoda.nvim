@@ -1,7 +1,7 @@
 local M = {}
 
 function M.setup()
-	local colors = require("yoda.colors").palette
+	local colors = require("colors").palette
 	local set = vim.api.nvim_set_hl
 
 	-- Reset colorscheme
