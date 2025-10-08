@@ -56,45 +56,19 @@ use({
 ```lua
 require("yoda").setup({
     -- Set light or dark variant
-    theme = "dark", -- use "light" for the light variant (default: "dark")
+    theme = "dark", -- "dark" or "light"
 
-    -- Enable transparent background
+    -- Style options
+    italic_comments = true,
     transparent_background = false,
+    bold_keywords = true,
+    underline_match_paren = true,
 
-    -- Override highlight groups with your own colour values
-    highlights = {
-        -- Highlight groups to override, adding new groups is also possible
-        -- See `:h highlight-groups` for a list of highlight groups or run `:hi` to see all groups and their current values
+    -- Override specific colors
+    colors = {}, -- Override palette colors
 
-        -- Example:
-        Comment = { fg = "#696969", bg = "NONE", italic = true },
-    },
-
-    -- Override a highlight group entirely using the built-in colour palette
-    overrides = function(colors) -- NOTE: This function nullifies the `highlights` option
-        -- Example:
-        return {
-            Comment = { fg = colors.green, bg = "NONE", italic = true },
-            ["@property"] = { fg = colors.magenta, bold = true },
-        }
-    end,
-
-    -- Override colors
-    colors = {
-        -- Override colors for both light and dark variants
-        bg = "#000000",
-        green = "#00ff00",
-
-        -- If you want to override colors for light or dark variants only, use the following format:
-        dark = {
-            magenta = "#ff00ff",
-            fg = "#eeeeee",
-        },
-        light = {
-            red = "#ff5c57",
-            cyan = "#5ef1ff",
-        },
-    },
+    -- Override specific highlight groups
+    highlights = {}, -- Override highlight groups
 
     -- Disable or enable colorscheme extensions
     extensions = {
@@ -103,6 +77,12 @@ require("yoda").setup({
         nvim_tree = true,
         cmp = true,
         gitsigns = true,
+        snacks = true,
+        netrw = true,
+        todo_comments = true,
+        indent_blankline = true,
+        dashboard = true,
+        which_key = true,
         misc = true,
     },
 })
