@@ -1,7 +1,5 @@
 # yoda.nvim <img width="34" height="34" alt="lightsaber_1281055" src="https://github.com/user-attachments/assets/c3c50b91-43c5-4531-9c8a-86936dd1306a" />
 
-![Preview](media/preview.png)
-
 ---
 
 ### ✨ Features
@@ -95,7 +93,7 @@ require("yoda").setup({
             cyan = "#5ef1ff",
         },
     },
-    
+
     -- Disable or enable colorscheme extensions
     extensions = {
         telescope = true,
