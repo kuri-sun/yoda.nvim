@@ -17,6 +17,7 @@ local palettes = {
 		number = "#7dd3c0",  -- Soft teal for numbers
 		string = "#e6d7a3",  -- Soft antique yellow for booleans
 		string_green = "#b9f6ca",  -- Light green for strings
+		todo_purple = "#a78bfa",  -- True soft purple for TODO comments
 		error = "#ff6666",
 		warning = "#ffee58",
 
@@ -63,6 +64,7 @@ local palettes = {
 		bright = "#000000", -- Pure black for emphasis
 		number = "#2c7a7b",  -- Darker teal for light theme numbers
 		string = "#8b7355",  -- Darker antique yellow for light theme
+		todo_purple = "#7c3aed",  -- Darker true purple for light theme TODO comments
 		error = "#dc143c", -- Bright crimson
 		warning = "#ff8c00", -- Bright orange
 

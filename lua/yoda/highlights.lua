@@ -106,7 +106,7 @@ function M.setup()
 	set(0, "Underlined", { underline = true })
 	set(0, "Ignore", { fg = colors.dim })
 	set(0, "Error", { fg = colors.error })
-	set(0, "Todo", { fg = colors.accent, bold = true })
+	set(0, "Todo", { fg = colors.todo_purple, bold = true })
 
 	-- Treesitter
 	set(0, "@variable", { fg = colors.fg })
@@ -205,8 +205,14 @@ function M.setup()
 	set(0, "@comment.documentation", { fg = colors.dim, italic = true })
 	set(0, "@comment.error", { fg = colors.error, italic = true })
 	set(0, "@comment.warning", { fg = colors.warning, italic = true })
-	set(0, "@comment.todo", { fg = colors.accent, bold = true })
+	set(0, "@comment.todo", { fg = colors.todo_purple, bold = true })
 	set(0, "@comment.note", { fg = colors.fg, italic = true })
+	
+	-- Additional TODO comment patterns
+	set(0, "@text.todo", { fg = colors.todo_purple, bold = true })
+	set(0, "@keyword.todo", { fg = colors.todo_purple, bold = true })
+	set(0, "TodoComment", { fg = colors.todo_purple, bold = true })
+	set(0, "CommentTodo", { fg = colors.todo_purple, bold = true })
 
 	set(0, "@tag", { fg = colors.fg })
 	set(0, "@tag.attribute", { fg = colors.subtle })
@@ -266,6 +272,17 @@ function M.setup()
 
 	-- Load plugin-specific highlights
 	require("yoda.plugins").setup(colors, set)
+	
+	-- Force TODO highlighting (must be last to override plugins)
+	vim.defer_fn(function()
+		set(0, "Todo", { fg = colors.todo_purple, bold = true })
+		set(0, "@comment.todo", { fg = colors.todo_purple, bold = true })
+		set(0, "@text.todo", { fg = colors.todo_purple, bold = true })
+		-- Force any potential plugin overrides
+		set(0, "TodoBgTODO", { fg = colors.todo_purple, bold = true })
+		set(0, "TodoFgTODO", { fg = colors.todo_purple, bold = true })
+		set(0, "TodoSignTODO", { fg = colors.todo_purple, bold = true })
+	end, 200)
 end
 
 return M
