@@ -67,12 +67,12 @@ function M.setup()
 
 	-- Syntax
 	set(0, "Comment", { fg = colors.dim, italic = true })
-	set(0, "Constant", { fg = colors.bright })
-	set(0, "String", { fg = colors.white })
-	set(0, "Character", { fg = colors.white })
-	set(0, "Number", { fg = colors.bright })
-	set(0, "Boolean", { fg = colors.bright })
-	set(0, "Float", { fg = colors.bright })
+	set(0, "Constant", { fg = colors.interface })  -- Changed to pale blue for class-like names
+	set(0, "String", { fg = colors.string_green })
+	set(0, "Character", { fg = colors.string_green })
+	set(0, "Number", { fg = colors.number })
+	set(0, "Boolean", { fg = colors.string })
+	set(0, "Float", { fg = colors.number })
 
 	set(0, "Identifier", { fg = colors.fg })
 	set(0, "Function", { fg = colors.brown })
@@ -83,7 +83,7 @@ function M.setup()
 	set(0, "Label", { fg = colors.fg })
 	set(0, "Operator", { fg = colors.subtle })
 	set(0, "Keyword", { fg = colors.accent })
-	set(0, "Exception", { fg = colors.accent })
+	set(0, "Exception", { fg = colors.pink })
 
 	set(0, "PreProc", { fg = colors.subtle })
 	set(0, "Include", { fg = colors.accent })
@@ -96,12 +96,12 @@ function M.setup()
 	set(0, "Structure", { fg = colors.interface })
 	set(0, "Typedef", { fg = colors.interface })
 
-	set(0, "Special", { fg = colors.accent })
+	set(0, "Special", { fg = colors.orange })
 	set(0, "SpecialChar", { fg = colors.accent })
 	set(0, "Tag", { fg = colors.fg })
 	set(0, "Delimiter", { fg = colors.subtle })
 	set(0, "SpecialComment", { fg = colors.dim, italic = true })
-	set(0, "Debug", { fg = colors.warning })
+	set(0, "Debug", { fg = colors.red })
 
 	set(0, "Underlined", { underline = true })
 	set(0, "Ignore", { fg = colors.dim })
@@ -111,39 +111,39 @@ function M.setup()
 	-- Treesitter
 	set(0, "@variable", { fg = colors.fg })
 	set(0, "@variable.builtin", { fg = colors.bright })
-	set(0, "@variable.parameter", { fg = colors.fg })
+	set(0, "@variable.parameter", { fg = colors.fg, italic = true })
 	set(0, "@variable.member", { fg = colors.fg })
 
-	set(0, "@constant", { fg = colors.bright })
+	set(0, "@constant", { fg = colors.interface })  -- Changed to pale blue for class-like names
 	set(0, "@constant.builtin", { fg = colors.bright })
-	set(0, "@constant.macro", { fg = colors.bright })
+	set(0, "@constant.macro", { fg = colors.orange })
 
 	set(0, "@module", { fg = colors.fg })
 	set(0, "@module.builtin", { fg = colors.bright })
 	set(0, "@label", { fg = colors.fg })
 
-	set(0, "@string", { fg = colors.white })
+	set(0, "@string", { fg = colors.string_green })
 	set(0, "@string.documentation", { fg = colors.dim, italic = true })
 	set(0, "@string.regexp", { fg = colors.accent })
 	set(0, "@string.escape", { fg = colors.accent })
 	set(0, "@string.special", { fg = colors.accent })
-	set(0, "@string.special.symbol", { fg = colors.white })
-	set(0, "@string.special.path", { fg = colors.white })
-	set(0, "@string.special.url", { fg = colors.white, underline = true })
+	set(0, "@string.special.symbol", { fg = colors.cyan })
+	set(0, "@string.special.path", { fg = colors.string_green })
+	set(0, "@string.special.url", { fg = colors.string_green, underline = true })
 
-	set(0, "@character", { fg = colors.white })
+	set(0, "@character", { fg = colors.string_green })
 	set(0, "@character.special", { fg = colors.accent })
 
-	set(0, "@boolean", { fg = colors.bright })
-	set(0, "@number", { fg = colors.bright })
-	set(0, "@number.float", { fg = colors.bright })
+	set(0, "@boolean", { fg = colors.string })
+	set(0, "@number", { fg = colors.number })
+	set(0, "@number.float", { fg = colors.number })
 
 	set(0, "@type", { fg = colors.interface })
-	set(0, "@type.builtin", { fg = colors.bright })
+	set(0, "@type.builtin", { fg = colors.interface })  -- Changed to interface color
 	set(0, "@type.definition", { fg = colors.interface })
 
-	set(0, "@attribute", { fg = colors.subtle })
-	set(0, "@attribute.builtin", { fg = colors.subtle })
+	set(0, "@attribute", { fg = colors.orange })
+	set(0, "@attribute.builtin", { fg = colors.orange })
 	set(0, "@property", { fg = colors.fg })
 
 	set(0, "@function", { fg = colors.brown })
@@ -155,6 +155,22 @@ function M.setup()
 
 	set(0, "@constructor", { fg = colors.interface })
 	set(0, "@operator", { fg = colors.subtle })
+	
+	-- Additional type-like highlighting
+	set(0, "@type.qualifier", { fg = colors.interface })
+	set(0, "@namespace", { fg = colors.interface })
+	set(0, "@variable.global", { fg = colors.interface })  -- Global variables often classes
+	
+	-- TypeScript/JavaScript specific type annotations
+	set(0, "@type.javascript", { fg = colors.interface })
+	set(0, "@type.typescript", { fg = colors.interface })
+	set(0, "@type.annotation", { fg = colors.interface })
+	set(0, "@variable.builtin.typescript", { fg = colors.interface })
+	set(0, "@variable.builtin.javascript", { fg = colors.interface })
+	
+	-- Make constants that look like types appear as types (PascalCase variables)
+	set(0, "@constant.lua", { fg = colors.interface })
+	set(0, "@variable.lua", { link = "@variable" })  -- Regular variables stay normal
 
 	set(0, "@keyword", { fg = colors.accent })
 	set(0, "@keyword.coroutine", { fg = colors.pink })
@@ -170,6 +186,7 @@ function M.setup()
 	set(0, "@keyword.conditional", { fg = colors.pink })
 
 	set(0, "@conditional", { fg = colors.pink })
+	
 	set(0, "@repeat", { fg = colors.pink })
 	set(0, "@debug", { fg = colors.warning })
 	set(0, "@exception", { fg = colors.pink })
@@ -198,6 +215,7 @@ function M.setup()
 	set(0, "@diff.plus", { fg = colors.accent })
 	set(0, "@diff.minus", { fg = colors.error })
 	set(0, "@diff.delta", { fg = colors.warning })
+	
 
 	-- LSP
 	set(0, "DiagnosticError", { fg = colors.error })
@@ -223,6 +241,14 @@ function M.setup()
 	set(0, "DiagnosticSignInfo", { fg = colors.fg })
 	set(0, "DiagnosticSignHint", { fg = colors.dim })
 	set(0, "DiagnosticSignOk", { fg = colors.accent })
+
+	-- Unused/unnecessary code highlighting
+	set(0, "DiagnosticUnnecessary", { fg = colors.dim_gray, italic = true })
+	set(0, "DiagnosticDeprecated", { fg = colors.dim_gray, strikethrough = true })
+	set(0, "DiagnosticUnderlineUnnecessary", { undercurl = true, sp = colors.dim_gray })
+	set(0, "DiagnosticUnderlineDeprecated", { undercurl = true, sp = colors.dim_gray })
+	set(0, "DiagnosticVirtualTextUnnecessary", { fg = colors.dim_gray, bg = colors.bg_highlight })
+	set(0, "DiagnosticVirtualTextDeprecated", { fg = colors.dim_gray, bg = colors.bg_highlight })
 
 	set(0, "LspReferenceText", { bg = colors.bg_highlight })
 	set(0, "LspReferenceRead", { bg = colors.bg_highlight })
