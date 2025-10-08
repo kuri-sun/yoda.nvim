@@ -44,9 +44,16 @@
 #### **Packer**
 
 ```lua
-use({
-  "kuri-sun/yoda.nvim",
-})
+use { "kuri-sun/yoda.nvim" }
+
+```
+
+---
+
+### 🚀 Usage
+
+```lua
+vim.cmd("colorscheme yoda")
 ```
 
 ---
@@ -86,11 +93,6 @@ require("yoda").setup({
         misc = true,
     },
 })
-
--- Toggle between themes
-vim.keymap.set("n", "<leader>tt", function()
-  require("yoda").toggle_theme()
-end, { desc = "Toggle theme" })
 ```
 
 #### **Lualine Setup**
