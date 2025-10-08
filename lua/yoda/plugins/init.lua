@@ -7,6 +7,12 @@ local plugin_map = {
 	telescope = "telescope",
 	cmp = "cmp",
 	gitsigns = "gitsigns",
+	snacks = "snacks",
+	netrw = "netrw",
+	todo_comments = "todo-comments",
+	indent_blankline = "indent-blankline",
+	dashboard = "dashboard",
+	which_key = "which-key",
 	misc = "misc",
 }
 
