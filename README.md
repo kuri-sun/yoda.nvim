@@ -126,4 +126,8 @@ require('lualine').setup {
 
 ---
 
-### Extra (coming soon...)
+### 🎨 Extras
+
+- **[Lazygit](extras/lazygit/)**
+- **[Alacritty](extras/alacritty/)** 
+- **[Tmux](extras/tmux/)**
