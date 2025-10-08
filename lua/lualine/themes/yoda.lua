@@ -9,12 +9,12 @@ end
 
 local yoda = {
     normal = {
-        a = { fg = colors.fg, bg = bg },
+        a = { fg = colors.string_green, bg = bg },
         b = { fg = colors.accent, bg = bg },
-        c = { fg = colors.fg, bg = bg },
-        x = { fg = colors.fg, bg = bg },
+        c = { fg = colors.string_green, bg = bg },
+        x = { fg = colors.string_green, bg = bg },
         y = { fg = colors.dim, bg = bg },
-        z = { fg = colors.fg, bg = bg },
+        z = { fg = colors.string_green, bg = bg },
     },
     insert = {
         a = { fg = colors.brown, bg = bg },
