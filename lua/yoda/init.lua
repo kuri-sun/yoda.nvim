@@ -24,6 +24,7 @@ M.config = {
         which_key = true,
         misc = true,
         mini = true,
+        noice = true,
     },
 }
 

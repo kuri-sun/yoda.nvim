@@ -29,6 +29,7 @@
 | [todo-comments.nvim](https://github.com/folke/todo-comments.nvim)               | [todo-comments.lua](lua/yoda/plugins/todo-comments.lua) |
 | netrw (built-in)                                                                | [netrw.lua](lua/yoda/plugins/netrw.lua)         |
 | [mini.nvim](https://github.com/echasnovski/mini.nvim)                          | [mini.lua](lua/yoda/plugins/mini.lua)           |
+| [noice.nvim](https://github.com/folke/noice.nvim)                              | [noice.lua](lua/yoda/plugins/noice.lua)         |
 
 </details>
 
