@@ -14,6 +14,7 @@ local plugin_map = {
 	dashboard = "dashboard",
 	which_key = "which-key",
 	misc = "misc",
+	mini = "mini",
 }
 
 function M.setup(colors, set)

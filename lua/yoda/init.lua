@@ -23,6 +23,7 @@ M.config = {
         dashboard = true,
         which_key = true,
         misc = true,
+        mini = true,
     },
 }
 

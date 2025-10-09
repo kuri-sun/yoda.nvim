@@ -28,6 +28,7 @@
 | [which-key.nvim](https://github.com/folke/which-key.nvim)                       | [which-key.lua](lua/yoda/plugins/which-key.lua) |
 | [todo-comments.nvim](https://github.com/folke/todo-comments.nvim)               | [todo-comments.lua](lua/yoda/plugins/todo-comments.lua) |
 | netrw (built-in)                                                                | [netrw.lua](lua/yoda/plugins/netrw.lua)         |
+| [mini.nvim](https://github.com/echasnovski/mini.nvim)                          | [mini.lua](lua/yoda/plugins/mini.lua)           |
 
 </details>
 
