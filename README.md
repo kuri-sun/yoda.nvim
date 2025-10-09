@@ -30,6 +30,7 @@
 | netrw (built-in)                                                                | [netrw.lua](lua/yoda/plugins/netrw.lua)         |
 | [mini.nvim](https://github.com/echasnovski/mini.nvim)                          | [mini.lua](lua/yoda/plugins/mini.lua)           |
 | [noice.nvim](https://github.com/folke/noice.nvim)                              | [noice.lua](lua/yoda/plugins/noice.lua)         |
+| [trouble.nvim](https://github.com/folke/trouble.nvim)                          | [trouble.lua](lua/yoda/plugins/trouble.lua)     |
 
 </details>
 
@@ -95,6 +96,9 @@ require("yoda").setup({
         dashboard = true,
         which_key = true,
         misc = true,
+        mini = true,
+        noice = true,
+        trouble = true,
     },
 })
 ```

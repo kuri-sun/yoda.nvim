@@ -16,6 +16,7 @@ local plugin_map = {
 	misc = "misc",
 	mini = "mini",
 	noice = "noice",
+	trouble = "trouble",
 }
 
 function M.setup(colors, set)

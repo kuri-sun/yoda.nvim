@@ -25,6 +25,7 @@ M.config = {
         misc = true,
         mini = true,
         noice = true,
+        trouble = true,
     },
 }
 
