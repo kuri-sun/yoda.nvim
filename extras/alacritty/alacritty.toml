@@ -2,6 +2,10 @@
 # Master Yoda Theme Terminal — Star Wars Lightsaber Green Edition
 # ──────────────────────────────────────────────
 
+#INFO: If you are using bash, you can comment this section out.
+[terminal.shell]
+program = "/usr/bin/zsh"
+
 [window]
 opacity = 0.60
 blur = true
