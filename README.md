@@ -14,23 +14,23 @@
 <details>
 <summary><b>🔌 Supported Plugins</b></summary>
 
-| Plugin                                                                          | Highlights                                      |
-| ------------------------------------------------------------------------------- | ----------------------------------------------- |
-| [neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim)                 | [neo-tree.lua](lua/yoda/plugins/neo-tree.lua)   |
-| [nvim-tree.lua](https://github.com/nvim-tree/nvim-tree.lua)                     | [nvim-tree.lua](lua/yoda/plugins/nvim-tree.lua) |
-| [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)              | [telescope.lua](lua/yoda/plugins/telescope.lua) |
-| [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)                                 | [cmp.lua](lua/yoda/plugins/cmp.lua)             |
-| [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)                     | [gitsigns.lua](lua/yoda/plugins/gitsigns.lua)   |
-| [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)                    | [lualine.lua](lua/lualine/themes/yoda.lua)      |
+| Plugin                                                                          | Highlights                                                    |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------- |
+| [neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim)                 | [neo-tree.lua](lua/yoda/plugins/neo-tree.lua)                 |
+| [nvim-tree.lua](https://github.com/nvim-tree/nvim-tree.lua)                     | [nvim-tree.lua](lua/yoda/plugins/nvim-tree.lua)               |
+| [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)              | [telescope.lua](lua/yoda/plugins/telescope.lua)               |
+| [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)                                 | [cmp.lua](lua/yoda/plugins/cmp.lua)                           |
+| [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)                     | [gitsigns.lua](lua/yoda/plugins/gitsigns.lua)                 |
+| [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)                    | [lualine.lua](lua/lualine/themes/yoda.lua)                    |
 | [indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim) | [indent-blankline.lua](lua/yoda/plugins/indent-blankline.lua) |
-| [snacks.nvim](https://github.com/folke/snacks.nvim)                             | [snacks.lua](lua/yoda/plugins/snacks.lua)       |
-| [dashboard-nvim](https://github.com/nvimdev/dashboard-nvim)                     | [dashboard.lua](lua/yoda/plugins/dashboard.lua) |
-| [which-key.nvim](https://github.com/folke/which-key.nvim)                       | [which-key.lua](lua/yoda/plugins/which-key.lua) |
-| [todo-comments.nvim](https://github.com/folke/todo-comments.nvim)               | [todo-comments.lua](lua/yoda/plugins/todo-comments.lua) |
-| netrw (built-in)                                                                | [netrw.lua](lua/yoda/plugins/netrw.lua)         |
-| [mini.nvim](https://github.com/echasnovski/mini.nvim)                          | [mini.lua](lua/yoda/plugins/mini.lua)           |
-| [noice.nvim](https://github.com/folke/noice.nvim)                              | [noice.lua](lua/yoda/plugins/noice.lua)         |
-| [trouble.nvim](https://github.com/folke/trouble.nvim)                          | [trouble.lua](lua/yoda/plugins/trouble.lua)     |
+| [snacks.nvim](https://github.com/folke/snacks.nvim)                             | [snacks.lua](lua/yoda/plugins/snacks.lua)                     |
+| [dashboard-nvim](https://github.com/nvimdev/dashboard-nvim)                     | [dashboard.lua](lua/yoda/plugins/dashboard.lua)               |
+| [which-key.nvim](https://github.com/folke/which-key.nvim)                       | [which-key.lua](lua/yoda/plugins/which-key.lua)               |
+| [todo-comments.nvim](https://github.com/folke/todo-comments.nvim)               | [todo-comments.lua](lua/yoda/plugins/todo-comments.lua)       |
+| netrw (built-in)                                                                | [netrw.lua](lua/yoda/plugins/netrw.lua)                       |
+| [mini.nvim](https://github.com/echasnovski/mini.nvim)                           | [mini.lua](lua/yoda/plugins/mini.lua)                         |
+| [noice.nvim](https://github.com/folke/noice.nvim)                               | [noice.lua](lua/yoda/plugins/noice.lua)                       |
+| [trouble.nvim](https://github.com/folke/trouble.nvim)                           | [trouble.lua](lua/yoda/plugins/trouble.lua)                   |
 
 </details>
 
@@ -123,3 +123,4 @@ require('lualine').setup {
 - **[Lazygit](extras/lazygit/)**
 - **[Alacritty](extras/alacritty/)**
 - **[Tmux](extras/tmux/)**
+- **[Oh My Zsh](extras/oh-my-zsh/)**
