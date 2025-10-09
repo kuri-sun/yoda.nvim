@@ -21,11 +21,13 @@
 | [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)              | [telescope.lua](lua/yoda/plugins/telescope.lua) |
 | [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)                                 | [cmp.lua](lua/yoda/plugins/cmp.lua)             |
 | [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)                     | [gitsigns.lua](lua/yoda/plugins/gitsigns.lua)   |
-| [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)                    | [lualine.lua](lua/yoda/plugins/lualine.lua)     |
-| [indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim) | [misc.lua](lua/yoda/plugins/misc.lua)           |
-| [snacks.nvim](https://github.com/folke/snacks.nvim)                             | [misc.lua](lua/yoda/plugins/misc.lua)           |
-| [dashboard-nvim](https://github.com/nvimdev/dashboard-nvim)                     | [misc.lua](lua/yoda/plugins/misc.lua)           |
-| [which-key.nvim](https://github.com/folke/which-key.nvim)                       | [misc.lua](lua/yoda/plugins/misc.lua)           |
+| [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)                    | [lualine.lua](lua/lualine/themes/yoda.lua)      |
+| [indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim) | [indent-blankline.lua](lua/yoda/plugins/indent-blankline.lua) |
+| [snacks.nvim](https://github.com/folke/snacks.nvim)                             | [snacks.lua](lua/yoda/plugins/snacks.lua)       |
+| [dashboard-nvim](https://github.com/nvimdev/dashboard-nvim)                     | [dashboard.lua](lua/yoda/plugins/dashboard.lua) |
+| [which-key.nvim](https://github.com/folke/which-key.nvim)                       | [which-key.lua](lua/yoda/plugins/which-key.lua) |
+| [todo-comments.nvim](https://github.com/folke/todo-comments.nvim)               | [todo-comments.lua](lua/yoda/plugins/todo-comments.lua) |
+| netrw (built-in)                                                                | [netrw.lua](lua/yoda/plugins/netrw.lua)         |
 
 </details>
 
