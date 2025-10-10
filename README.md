@@ -1,6 +1,8 @@
 # yoda.nvim <img width="34" height="34" alt="lightsaber_1281055" src="https://github.com/user-attachments/assets/c3c50b91-43c5-4531-9c8a-86936dd1306a" />
 
-![yoda.nvim preview](media/preview.png)
+![yoda.nvim file_editor_preview](media/preview1.png)
+
+![yoda.nvim_with_super_tool_scheme_for snacks_plugins](media/preview2.png)
 
 ---
 
@@ -118,7 +120,7 @@ require('lualine').setup {
 
 ---
 
-### 🎨 Extras
+### 🎁 Extras
 
 - **[Lazygit](extras/lazygit/)**
 - **[Alacritty](extras/alacritty/)**
