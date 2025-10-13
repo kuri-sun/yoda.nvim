@@ -1,14 +1,14 @@
-# Yoda tmux theme
+# Yoda tmux theme — Light Variant
 
-# Colors
-YODA_BG="#050705"
-YODA_FG="#d4d4d4"
-YODA_ACCENT="#00dd88"
-YODA_STRING_GREEN="#b9f6ca"
-YODA_INTERFACE="#4fa8d8"
-YODA_DIM="#5a7a5a"
-YODA_BORDER="#2a3a2a"
-YODA_BG_LIGHT="#0a0d0a"
+# Colors from yoda.nvim light palette
+YODA_BG="#f3f5f4"
+YODA_FG="#1a1d1f"
+YODA_ACCENT="#3bb07a"
+YODA_STRING_GREEN="#2e7d32"
+YODA_INTERFACE="#6aa8ef"
+YODA_DIM="#56606b"
+YODA_BORDER="#b7bfc7"
+YODA_BG_LIGHT="#fbfdfc"
 
 # Status bar
 set-option -g status-style "bg=${YODA_BG},fg=${YODA_FG}"
