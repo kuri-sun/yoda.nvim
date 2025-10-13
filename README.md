@@ -3,7 +3,7 @@
 <br/>
 
 <p align="center">
-    <img width="200" height="200" alt="lightsaber" src="assets/logo.png" />
+    <img width="300" height="300" alt="lightsaber" src="assets/logo.png" />
 </p>
 
 <br/>
