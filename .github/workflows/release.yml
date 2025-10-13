@@ -3,11 +3,11 @@ name: Release
 on:
   push:
     tags:
-      - 'v*.*.*'
+      - "v*.*.*"
   workflow_dispatch:
     inputs:
       version:
-        description: 'Version to release (e.g., v1.0.0)'
+        description: "Version to release (e.g., v1.0.0)"
         required: true
         type: string
 
@@ -19,7 +19,7 @@ jobs:
   changelog:
     name: Generate Changelog
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -30,7 +30,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: "20"
 
       - name: Install changelog generator
         run: |
@@ -59,22 +59,20 @@ jobs:
         run: |
           # Generate complete changelog
           auto-changelog \
-            --template ci/changelog-template.hbs \
+            --template changelog/changelog-template.hbs \
             --commit-limit 50 \
             --unreleased \
             --sort-commits date-desc \
             --ignore-commit-pattern "^(chore|docs|style|refactor|test):" \
             --output CHANGELOG.md
 
-      - name: Add Yoda wisdom to changelog
+      - name: Format changelog header and footer
         run: |
-          # Add header and footer to changelog
+          # Add standard header and footer to changelog
           cat > NEW_CHANGELOG.md << 'EOF'
           # Changelog
 
           All notable changes to this project will be documented in this file.
-
-          > *"Much to learn you still have... my old padawan."* - Master Yoda
 
           <!-- 
           This changelog is automatically generated based on conventional commits.
@@ -82,18 +80,14 @@ jobs:
           -->
 
           EOF
-          
+
           # Append the generated content (skip the first few lines)
           tail -n +4 CHANGELOG.md >> NEW_CHANGELOG.md
-          
+
           # Add footer
-          echo "" >> NEW_CHANGELOG.md
-          echo "---" >> NEW_CHANGELOG.md
-          echo "" >> NEW_CHANGELOG.md
           echo "*This changelog is automatically generated from conventional commits and GitHub releases.*" >> NEW_CHANGELOG.md
           echo "" >> NEW_CHANGELOG.md
-          echo "*May the Force be with your updates.* ✨" >> NEW_CHANGELOG.md
-          
+
           mv NEW_CHANGELOG.md CHANGELOG.md
 
       - name: Commit updated changelog
@@ -129,16 +123,16 @@ jobs:
           title: "📝 Update changelog for ${{ steps.version.outputs.version }}"
           body: |
             ## 📝 Automated Changelog Update
-            
+
             This PR automatically updates the changelog for version `${{ steps.version.outputs.version }}`.
-            
+
             ### Changes:
             - ✨ Generated changelog from conventional commits
             - 📅 Added release date and version info
             - 🏷️ Categorized changes by type (feat/fix/etc.)
-            
+
             > *"Always pass on what you have learned."* - Master Yoda
-            
+
             🤖 This PR was created automatically by the release workflow.
           branch: chore/changelog-${{ steps.version.outputs.version }}
           delete-branch: true
