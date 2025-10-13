@@ -1,0 +1,54 @@
+{{#each releases}}
+{{#if @first}}
+{{#if ../package.version}}
+## [{{../package.version}}]({{../package.repository}}/compare/{{previousTag}}...{{tag}}){{#if date}} - {{isoDate}}{{/if}}
+{{else}}
+## [{{tag}}]({{../package.repository}}/compare/{{previousTag}}...{{tag}}){{#if date}} - {{isoDate}}{{/if}}
+{{/if}}
+{{else}}
+## [{{tag}}]({{../package.repository}}/compare/{{previousTag}}...{{tag}}){{#if date}} - {{isoDate}}{{/if}}
+{{/if}}
+
+{{#each merges}}
+{{#if title}}
+### 🔄 {{title}}
+{{/if}}
+{{#each commits}}
+- {{#if breaking}}**BREAKING:** {{/if}}{{#if href}}[{{shorthash}}]({{href}}) {{/if}}{{subject}}{{#if author}} by {{author.name}}{{/if}}
+{{/each}}
+
+{{/each}}
+{{#each fixes}}
+{{#if @first}}
+### 🐛 Bug Fixes
+{{/if}}
+- {{#if href}}[{{shorthash}}]({{href}}) {{/if}}{{subject}}{{#if author}} by {{author.name}}{{/if}}
+{{/each}}
+
+{{#each commits}}
+{{#unless merge}}
+{{#if tag}}
+{{#unless @first}}
+### 📝 Other Changes
+{{/unless}}
+{{/if}}
+{{#if subject}}
+{{#unless fix}}
+{{#unless feat}}
+{{#unless breaking}}
+- {{#if href}}[{{shorthash}}]({{href}}) {{/if}}{{subject}}{{#if author}} by {{author.name}}{{/if}}
+{{/unless}}
+{{/unless}}
+{{/unless}}
+{{/if}}
+{{/unless}}
+{{/each}}
+
+{{#each features}}
+{{#if @first}}
+### ✨ Features
+{{/if}}
+- {{#if breaking}}**BREAKING:** {{/if}}{{#if href}}[{{shorthash}}]({{href}}) {{/if}}{{subject}}{{#if author}} by {{author.name}}{{/if}}
+{{/each}}
+
+{{/each}}

@@ -75,7 +75,9 @@ Some things to keep in mind when opening an issue:
 
 ## Pull Requests 🚀
 
-Commits should be in the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) format. This helps with generating changelogs and keeping the commit history clean.
+Commits should be in the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) format. This helps with **automatically generating changelogs** and keeping the commit history clean.
+
+**Important:** Our CHANGELOG.md is automatically generated from conventional commits during releases. Please do **not** edit CHANGELOG.md manually - your changes will be overwritten.
 
 When opening a pull request:
 

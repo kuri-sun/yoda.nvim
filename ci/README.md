@@ -89,6 +89,26 @@ The preview bot will:
    - Color change summary table
    - Side-by-side comparison when colors change
 
+### Release Workflow (`.github/workflows/release.yml`)
+Runs automatically when you create a release via GitHub's web UI:
+
+- 📝 **Automated changelog generation** from conventional commits
+- 🔄 **CHANGELOG.md updates** committed back to repo
+- ✨ **Semantic versioning** support
+
+**How to create a release:**
+1. Go to GitHub → Releases → "Create a new release"
+2. Create a new tag (e.g., `v1.2.0`) 
+3. Add release title and description
+4. Publish release
+5. GitHub Actions will automatically update CHANGELOG.md with generated content
+
+**Automatic changelog generation:**
+1. Analyzes conventional commits since last release
+2. Categorizes changes (✨ Features, 🐛 Bug Fixes, etc.)
+3. Updates CHANGELOG.md with proper formatting
+4. Commits the updated changelog back to main branch
+
 ## 🛠️ Development
 
 ### Prerequisites
