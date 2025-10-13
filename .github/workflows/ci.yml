@@ -1,0 +1,106 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  lint:
+    name: Lint and Format
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install stylua
+        uses: JohnnyMorganz/stylua-action@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          version: latest
+          args: --check lua/ colors/ ci/
+
+      - name: Install Lua and luacheck
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y lua5.1 luarocks
+          sudo luarocks install luacheck
+
+      - name: Run luacheck
+        run: |
+          luacheck --config .luacheckrc .
+
+      - name: Check for trailing whitespace
+        run: |
+          if find . -name "*.lua" -exec grep -l "[[:space:]]$" {} \; 2>/dev/null | head -1 >/dev/null; then
+            echo "❌ Files with trailing whitespace found:"
+            find . -name "*.lua" -exec grep -l "[[:space:]]$" {} \; 2>/dev/null
+            exit 1
+          else
+            echo "✅ No trailing whitespace found"
+          fi
+
+      - name: Check line endings
+        run: |
+          if find . -name "*.lua" -exec file {} \; | grep -q "CRLF"; then
+            echo "❌ Files with CRLF line endings found:"
+            find . -name "*.lua" -exec file {} \; | grep "CRLF"
+            exit 1
+          else
+            echo "✅ All files use LF line endings"
+          fi
+
+  validate:
+    name: Validate Theme
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Neovim
+        uses: rhymond/setup-nvim@v0.2.0
+        with:
+          version: 'stable'
+
+      - name: Test theme loading
+        run: |
+          # Test that the theme can be loaded without errors
+          nvim --headless --noplugin -u NONE -c "
+          set runtimepath+=$PWD
+          try
+            colorscheme yoda
+            echo 'Theme loaded successfully'
+            qall
+          catch
+            echo 'Error loading theme: ' . v:exception
+            cquit 1
+          endtry"
+
+      - name: Test Lua modules
+        run: |
+          # Test that all Lua modules can be required
+          nvim --headless --noplugin -u NONE -c "
+          set runtimepath+=$PWD
+          lua << EOF
+          local modules = {
+            'yoda',
+            'yoda.colors',  
+            'yoda.highlights',
+            'yoda.plugins',
+          }
+          
+          for _, module in ipairs(modules) do
+            local ok, result = pcall(require, module)
+            if not ok then
+              print('Error loading module ' .. module .. ': ' .. tostring(result))
+              vim.cmd('cquit 1')
+            else
+              print('✅ Module ' .. module .. ' loaded successfully')
+            end
+          end
+          
+          print('All modules loaded successfully')
+          vim.cmd('qall')
+          EOF"
+
