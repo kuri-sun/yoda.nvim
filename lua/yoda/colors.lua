@@ -50,51 +50,52 @@ local palettes = {
         fg_light = "#e5e5e5",
     },
     light = {
-        -- Core colors
-        bg = "#d8ddd8", -- Main background (middle gradient)
-        fg = "#2d5016", -- Dark green for main text
-        white = "#1a1a1a", -- Dark for strings
-        accent = "#00aa44", -- Bright green accent
-        brown = "#d17b00", -- Bright orange-brown for functions
-        brown_dim = "#b8860b", -- Goldenrod
-        interface = "#4682b4", -- Steel blue for types
-        pink = "#d1447e", -- Bright pink for keywords
-        dim = "#7a997a", -- Light green for comments
-        subtle = "#5a7a5a", -- Medium green for punctuation
-        bright = "#000000", -- Pure black for emphasis
-        number = "#2c7a7b", -- Darker teal for light theme numbers
-        string = "#8b7355", -- Darker antique yellow for light theme
-        todo_purple = "#7c3aed", -- Darker true purple for light theme TODO comments
-        error = "#dc143c", -- Bright crimson
-        warning = "#ff8c00", -- Bright orange
+        -- Core colors (lighter, clearer on white bg)
+        bg = "#f3f5f4", -- Light neutral background
+        fg = "#1a1d1f", -- Primary text
+        white = "#0b0d0f", -- Strong emphasis text
+        accent = "#3bb07a", -- Revert to previous accent green
+        brown = "#b88347", -- Functions / identifiers (lighter)
+        brown_dim = "#d6a55a", -- Storage classes, secondary (lighter)
+        interface = "#6aa8ef", -- Types / classes (lighter blue)
+        pink = "#b0307a", -- Keywords / control (stronger)
+        dim = "#56606b", -- Comments
+        subtle = "#6b7280", -- Punctuation / operators
+        bright = "#000000", -- Max emphasis
+        number = "#57aeb6", -- Numbers (lighter teal)
+        string = "#b89335", -- Booleans and similar (lighter amber)
+        string_green = "#2e7d32", -- Strings (darker green for readability)
+        todo_purple = "#b0a4f5", -- TODO/notes (lighter purple)
+        error = "#e38a8a", -- Errors (lighter red)
+        warning = "#f0b56d", -- Warnings (lighter orange)
 
-        -- Background variations (gradient effect)
-        bg_dark = "#c0c8c0", -- Darker gradient step
-        bg_light = "#e0e8e0", -- Lighter gradient step
-        bg_highlight = "#b8d0b8", -- Subtle green highlight
-        border = "#a0c0a0", -- Medium green border
-        selection = "#a8d8a8", -- Light green selection
-        cursor_line = "#d4d9d4", -- Subtle gradient
-        line_number = "#88a888", -- Muted green
+        -- Background variations
+        bg_dark = "#e6eae9", -- Panel bg
+        bg_light = "#fbfdfc", -- Float/menus bg
+        bg_highlight = "#dbe7e0", -- Selection/highlight bg
+        border = "#b7bfc7", -- Subtle border (darker)
+        selection = "#b9e3cf", -- Stronger green-tinted selection
+        cursor_line = "#e7ecea", -- Current line
+        line_number = "#8a929a", -- Gutter numbers
 
         -- Git/Diff
-        diff_add = "#d0f0d0", -- Light green
-        diff_delete = "#f0d0d0", -- Light red
-        diff_change = "#f0f0c0", -- Light yellow
-        diff_text = "#e0e0a0", -- Slightly darker yellow
+        diff_add = "#bfe9cf",
+        diff_delete = "#f4c3c3",
+        diff_change = "#ece7b6",
+        diff_text = "#e1dc8a",
 
         -- Traditional color mappings
-        red = "#dc143c",
-        yellow = "#ff8c00",
-        gray = "#7a997a",
-        dim_gray = "#888888", -- True gray for unused code in light theme
-        green = "#00aa44",
-        cyan = "#2d5016",
-        magenta = "#d1447e",
-        orange = "#d17b00",
-        blue = "#4682b4",
-        fg_dark = "#5a7a5a",
-        fg_light = "#1a1a1a",
+        red = "#e38a8a",
+        yellow = "#f0c98a",
+        gray = "#6b7280",
+        dim_gray = "#8b9299", -- Unused code
+        green = "#3bb07a",
+        cyan = "#5fb4da",
+        magenta = "#b0307a",
+        orange = "#efbe71",
+        blue = "#6aa8ef",
+        fg_dark = "#3f454a",
+        fg_light = "#0b0d0f",
     },
 }
 
