@@ -10,15 +10,15 @@
       <img src="assets/code.png" />
     </td>
     <td width="50%">
-      <img src="assets/snacks.png" />
+      <img src="assets/code-l.png" />
     </td>
   </tr>
   <tr>
     <td width="50%">
-      <img src="assets/snacks.png" />
+      <img src="assets/snack.png" />
     </td>
     <td width="50%">
-      <img src="assets/snacks-l.png" />
+      <img src="assets/snack-l.png" />
     </td>
   </tr>
 </table>
