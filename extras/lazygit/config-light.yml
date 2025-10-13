@@ -1,0 +1,63 @@
+# yoda light theme for lazygit
+# based on yoda.nvim light palette
+gui:
+  theme:
+    activebordercolor: ["#3bb07a", "bold"]
+    inactivebordercolor: ["#b7bfc7"]
+    optionstextcolor: ["#1a1d1f"]
+    selectedlinebgcolor: ["#b9e3cf"]
+    selectedrangebgcolor: ["#dbe7e0"]
+    cherrypickedcommitbgcolor: ["#e1dc8a"]
+    cherrypickedcommitfgcolor: ["#3bb07a"]
+    unstagedchangescolor: ["#e38a8a"]
+    defaultfgcolor: ["#1a1d1f"]
+    searchingactivebordercolor: ["#3bb07a", "bold"]
+    addedfilecolor: ["#3bb07a"]
+    modifiedfilecolor: ["#efbe71"]
+    deletedfilecolor: ["#e38a8a"]
+    diffaddedcolor: ["#3bb07a"]
+    diffmodifiedcolor: ["#efbe71"]
+    diffdeletedcolor: ["#e38a8a"]
+    branchupstreamcolor: ["#5fb4da"]
+    branchlogcolor: ["#b0307a"]
+  screenmode: "normal"
+  scrollheight: 2
+  scrollpastbottom: true
+  sidepanelwidth: 0.3333
+  expandfocusedsidepanel: false
+  mainpanelsplitmode: "flexible"
+  mouseevents: true
+  skipdiscardchangewarning: false
+  skipstashwarning: false
+  commitlength:
+    show: true
+  showfiletree: true
+  showrandomtip: true
+  showcommandlog: true
+  showbottomline: true
+  showpaneljumps: true
+  showbranchcommithash: false
+  spinner:
+    frames: ["|", "/", "-", "\\"]
+    rate: 50
+git:
+  paging:
+    colorarg: always
+    useconfig: false
+  commit:
+    signoff: false
+  merging:
+    manualcommit: false
+    args: ""
+  skiphookprefix: wip
+  autofetch: true
+  autorefresh: true
+  branchlogcmd: "git log --graph --color=always --abbrev-commit --decorate --date=relative --pretty=medium {{branchname}} --"
+  allbrancheslogcmd: "git log --graph --all --color=always --abbrev-commit --decorate --date=relative  --pretty=medium"
+  overridegpg: false
+  disableforcepushing: false
+  parseemoji: false
+update:
+  method: prompt
+reporting: "undetermined"
+disablestartuppopups: false
