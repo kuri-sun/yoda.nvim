@@ -1,16 +1,17 @@
-# yoda.nvim <img width="30" height="30" alt="lightsaber_1281055" src="https://github.com/user-attachments/assets/c3c50b91-43c5-4531-9c8a-86936dd1306a" />
+# yoda.nvim
+
+<p align="center">
+    <img width="200" height="200" alt="lightsaber_1281055" src="https://github.com/user-attachments/assets/c3c50b91-43c5-4531-9c8a-86936dd1306a" />
+</p>
 
 <p align="center">
     <a href="https://github.com/kuri-sun/yoda.nvim/blob/main/LICENSE">
-        <img alt="License" src="https://img.shields.io/github/license/kuri-sun/yoda.nvim?style=for-the-badge&logo=github&color=%FFF58A">
+        <img alt="License" src="https://img.shields.io/github/license/kuri-sun/yoda.nvim?style=social&logo=github&color=%FFF58A">
     </a>
     <a href="https://github.com/kuri-sun/yoda.nvim/stars">
-        <img alt="stars" src="https://img.shields.io/github/stars/kuri-sun/yoda.nvim?style=for-the-badge&logo=github&color=%FFF58A">
+        <img alt="stars" src="https://img.shields.io/github/stars/kuri-sun/yoda.nvim?style=social&logo=github&color=%FFF58A">
     </a>
-    <br>
 </p>
-
----
 
 <table width="100%">
   <tr>
