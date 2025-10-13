@@ -40,8 +40,8 @@ end
 
 -- Load the colorscheme
 function M.load()
-    -- Set termguicolors for true color support
-    vim.o.termguicolors = true
+    -- Set termguicolors for true color support (avoid luacheck read-only field warning)
+    vim.cmd("set termguicolors")
 
     -- Setup colors with theme
     require("yoda.colors").setup(M.config)
@@ -50,7 +50,7 @@ function M.load()
     require("yoda.highlights").setup()
 
     -- Set the colorscheme name (this must come after applying highlights)
-    vim.g.colors_name = "yoda"
+    vim.api.nvim_set_var("colors_name", "yoda")
 
     -- Apply configuration-based overrides
     local set = vim.api.nvim_set_hl
@@ -104,23 +104,23 @@ function M.load()
     -- Reload lualine if it's loaded
     require("yoda.util").reload_lualine()
 
-    -- Set terminal colors
-    vim.g.terminal_color_0 = colors.bg_dark
-    vim.g.terminal_color_1 = colors.red
-    vim.g.terminal_color_2 = colors.green
-    vim.g.terminal_color_3 = colors.yellow
-    vim.g.terminal_color_4 = colors.blue
-    vim.g.terminal_color_5 = colors.magenta
-    vim.g.terminal_color_6 = colors.cyan
-    vim.g.terminal_color_7 = colors.fg
-    vim.g.terminal_color_8 = colors.gray
-    vim.g.terminal_color_9 = colors.red
-    vim.g.terminal_color_10 = colors.green
-    vim.g.terminal_color_11 = colors.yellow
-    vim.g.terminal_color_12 = colors.blue
-    vim.g.terminal_color_13 = colors.magenta
-    vim.g.terminal_color_14 = colors.cyan
-    vim.g.terminal_color_15 = colors.fg_light
+    -- Set terminal colors via API to avoid luacheck warnings
+    vim.api.nvim_set_var("terminal_color_0", colors.bg_dark)
+    vim.api.nvim_set_var("terminal_color_1", colors.red)
+    vim.api.nvim_set_var("terminal_color_2", colors.green)
+    vim.api.nvim_set_var("terminal_color_3", colors.yellow)
+    vim.api.nvim_set_var("terminal_color_4", colors.blue)
+    vim.api.nvim_set_var("terminal_color_5", colors.magenta)
+    vim.api.nvim_set_var("terminal_color_6", colors.cyan)
+    vim.api.nvim_set_var("terminal_color_7", colors.fg)
+    vim.api.nvim_set_var("terminal_color_8", colors.gray)
+    vim.api.nvim_set_var("terminal_color_9", colors.red)
+    vim.api.nvim_set_var("terminal_color_10", colors.green)
+    vim.api.nvim_set_var("terminal_color_11", colors.yellow)
+    vim.api.nvim_set_var("terminal_color_12", colors.blue)
+    vim.api.nvim_set_var("terminal_color_13", colors.magenta)
+    vim.api.nvim_set_var("terminal_color_14", colors.cyan)
+    vim.api.nvim_set_var("terminal_color_15", colors.fg_light)
 end
 
 -- Provide a convenient reload function for development

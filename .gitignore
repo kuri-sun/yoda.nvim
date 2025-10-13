@@ -16,4 +16,5 @@ Thumbs.db
 
 # Neovim
 *.log
+.nvimlog
 .netrwhist
