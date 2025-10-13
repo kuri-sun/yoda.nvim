@@ -1,4 +1,4 @@
-# yoda.nvim <p align="bottom"><img alt="stars" src="https://img.shields.io/github/stars/kuri-sun/yoda.nvim?style=social&logo=github&color=%FFF58A"></p>
+# yoda.nvim
 
 <br/>
 
