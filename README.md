@@ -1,11 +1,11 @@
 # yoda.nvim <img width="30" height="30" alt="lightsaber_1281055" src="https://github.com/user-attachments/assets/c3c50b91-43c5-4531-9c8a-86936dd1306a" />
 
 <p align="center">
-    <a href="https://github.com/scottmckendry/cyberdream.nvim/blob/main/LICENSE">
-        <img alt="License" src="https://img.shields.io/github/license/scottmckendry/cyberdream.nvim?style=for-the-badge&logo=github&color=%235ef1ff">
+    <a href="https://github.com/kuri-sun/yoda.nvim/blob/main/LICENSE">
+        <img alt="License" src="https://img.shields.io/github/license/kuri-sun/yoda.nvim?style=for-the-badge&logo=github&color=%FFF58A">
     </a>
-    <a href="https://github.com/scottmckendry/cyberdream.nvim/stars">
-        <img alt="stars" src="https://img.shields.io/github/stars/scottmckendry/cyberdream.nvim?style=for-the-badge&logo=github&color=%23bd5eff">
+    <a href="https://github.com/kuri-sun/yoda.nvim/stars">
+        <img alt="stars" src="https://img.shields.io/github/stars/kuri-sun/yoda.nvim?style=for-the-badge&logo=github&color=%FFF58A">
     </a>
     <br>
 </p>
