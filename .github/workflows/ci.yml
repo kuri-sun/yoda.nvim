@@ -33,9 +33,16 @@ jobs:
 
       - name: Check for trailing whitespace
         run: |
-          if find . -name "*.lua" -exec grep -l "[[:space:]]$" {} \; 2>/dev/null | head -1 >/dev/null; then
-            echo "❌ Files with trailing whitespace found:"
-            find . -name "*.lua" -exec grep -l "[[:space:]]$" {} \; 2>/dev/null
+          set -e
+          files=$(git ls-files "*.lua")
+          if [ -z "$files" ]; then
+            echo "✅ No Lua files to check"
+            exit 0
+          fi
+          offenders=$(grep -nH -E "[[:blank:]]+$" $files || true)
+          if [ -n "$offenders" ]; then
+            echo "❌ Trailing whitespace found (file:line):"
+            echo "$offenders"
             exit 1
           else
             echo "✅ No trailing whitespace found"
@@ -43,9 +50,16 @@ jobs:
 
       - name: Check line endings
         run: |
-          if find . -name "*.lua" -exec file {} \; | grep -q "CRLF"; then
+          set -e
+          files=$(git ls-files "*.lua")
+          if [ -z "$files" ]; then
+            echo "✅ No Lua files to check"
+            exit 0
+          fi
+          crlf=$(file $files | grep "CRLF" || true)
+          if [ -n "$crlf" ]; then
             echo "❌ Files with CRLF line endings found:"
-            find . -name "*.lua" -exec file {} \; | grep "CRLF"
+            echo "$crlf"
             exit 1
           else
             echo "✅ All files use LF line endings"
