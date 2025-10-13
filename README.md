@@ -1,4 +1,4 @@
-# <img width="30" height="30" alt="lightsaber_1281055" src="https://github.com/user-attachments/assets/c3c50b91-43c5-4531-9c8a-86936dd1306a" /> Yoda.nvim
+# yoda.nvim <img width="30" height="30" alt="lightsaber_1281055" src="https://github.com/user-attachments/assets/c3c50b91-43c5-4531-9c8a-86936dd1306a" />
 
 <table width="100%">
   <tr>
@@ -15,7 +15,7 @@
   </tr>
   <tr>
     <td width="50%">
-      <img src="assets/snack.png" />
+      <img src="assets/snacks.png" />
     </td>
     <td width="50%">
       <img src="assets/snack-l.png" />
