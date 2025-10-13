@@ -94,27 +94,5 @@ jobs:
 
       - name: Test Lua modules
         run: |
-          # Test that all Lua modules can be required
-          nvim --headless --noplugin -u NONE -c "
-          set runtimepath+=$PWD
-          lua << EOF
-          local modules = {
-            'yoda',
-            'yoda.colors',  
-            'yoda.highlights',
-            'yoda.plugins',
-          }
-          
-          for _, module in ipairs(modules) do
-            local ok, result = pcall(require, module)
-            if not ok then
-              print('Error loading module ' .. module .. ': ' .. tostring(result))
-              vim.cmd('cquit 1')
-            else
-              print('✅ Module ' .. module .. ' loaded successfully')
-            end
-          end
-          
-          print('All modules loaded successfully')
-          vim.cmd('qall')
-          EOF"
+          # Require core modules headlessly via Lua file
+          nvim --headless --noplugin -u NONE -c "set runtimepath+=$PWD" -l ci/require_modules.lua
