@@ -1,8 +1,27 @@
-# yoda.nvim <img width="34" height="34" alt="lightsaber_1281055" src="https://github.com/user-attachments/assets/c3c50b91-43c5-4531-9c8a-86936dd1306a" />
+# <img width="30" height="30" alt="lightsaber_1281055" src="https://github.com/user-attachments/assets/c3c50b91-43c5-4531-9c8a-86936dd1306a" /> Yoda.nvim
 
-![yoda.nvim file_editor_preview](assets/preview1.png)
-
-![yoda.nvim_with_super_tool_scheme_for snacks_plugins](assets/preview2.png)
+<table width="100%">
+  <tr>
+    <th>Dark</th>
+    <th>Light</th>
+  </tr>
+  <tr>
+    <td width="50%">
+      <img src="assets/code.png" />
+    </td>
+    <td width="50%">
+      <img src="assets/snacks.png" />
+    </td>
+  </tr>
+  <tr>
+    <td width="50%">
+      <img src="assets/snacks.png" />
+    </td>
+    <td width="50%">
+      <img src="assets/snacks-l.png" />
+    </td>
+  </tr>
+</table>
 
 ---
 
