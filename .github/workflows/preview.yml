@@ -21,9 +21,10 @@ jobs:
           ref: ${{ github.event.pull_request.head.sha }}
           
       - name: Setup Neovim
-        uses: rhymond/setup-nvim@v0.2.0
+        uses: rhysd/action-setup-vim@v1
         with:
-          version: 'stable'
+          neovim: true
+          version: stable
 
       - name: Generate theme preview
         run: |

@@ -59,9 +59,10 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup Neovim
-        uses: rhymond/setup-nvim@v0.2.0
+        uses: rhysd/action-setup-vim@v1
         with:
-          version: 'stable'
+          neovim: true
+          version: stable
 
       - name: Test theme loading
         run: |
@@ -103,4 +104,3 @@ jobs:
           print('All modules loaded successfully')
           vim.cmd('qall')
           EOF"
-
