@@ -1,0 +1,94 @@
+# ──────────────────────────────────────────────
+# Master Yoda Theme Terminal — Light Variant
+# ──────────────────────────────────────────────
+
+[terminal.shell]
+program = "/usr/bin/zsh"
+
+[window]
+opacity = 0.90
+blur = true
+decorations = "none"
+dynamic_padding = true
+padding = { x = 12, y = 10 }
+startup_mode = "Windowed"
+
+[font]
+normal = { family = "JetBrains Mono", style = "Medium" }
+bold = { family = "JetBrains Mono", style = "Bold" }
+italic = { family = "JetBrains Mono", style = "Italic" }
+size = 13.5
+
+[env]
+TERM = "xterm-256color"
+
+[cursor]
+style = "Beam"
+thickness = 0.15
+blink_interval = 500
+unfocused_hollow = true
+
+[bell]
+animation = "EaseOutExpo"
+color = "#3bb07a"
+duration = 0
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[mouse]
+hide_when_typing = true
+
+[window.class]
+general = "Alacritty"
+instance = "alacritty"
+
+# ──────────────────────────────────────────────
+# 🎨 Color Palette — Yoda Light
+# Based on lua/yoda/colors.lua light palette
+# ──────────────────────────────────────────────
+
+[colors.primary]
+background = "#f3f5f4"
+foreground = "#1a1d1f"
+
+[colors.cursor]
+text = "#f3f5f4"
+cursor = "#3bb07a"
+
+[colors.selection]
+text = "#1a1d1f"
+background = "#b9e3cf"
+
+[colors.search.matches]
+foreground = "#1a1d1f"
+background = "#b9e3cf"
+
+[colors.normal]
+black   = "#e6eae9"
+red     = "#e38a8a"
+green   = "#3bb07a"
+yellow  = "#efbe71"
+blue    = "#6aa8ef"
+magenta = "#b0307a"
+cyan    = "#5fb4da"
+white   = "#8a929a"
+
+[colors.bright]
+black   = "#dbe7e0"
+red     = "#f1a3a3"
+green   = "#4fc295"
+yellow  = "#f3d39a"
+blue    = "#8bbcf3"
+magenta = "#cb68a1"
+cyan    = "#8fc9e8"
+white   = "#ffffff"
+
+[colors.hints.start]
+foreground = "#1a1d1f"
+background = "#b9e3cf"
+
+[colors.hints.end]
+foreground = "#3bb07a"
+background = "#f3f5f4"
