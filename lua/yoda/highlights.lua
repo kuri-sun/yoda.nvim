@@ -214,7 +214,7 @@ function M.setup()
     set(0, "TodoComment", { fg = colors.todo_purple, bold = true })
     set(0, "CommentTodo", { fg = colors.todo_purple, bold = true })
 
-    set(0, "@tag", { fg = colors.fg })
+    set(0, "@tag", { fg = colors.interface })
     set(0, "@tag.attribute", { fg = colors.subtle })
     set(0, "@tag.delimiter", { fg = colors.subtle })
 
