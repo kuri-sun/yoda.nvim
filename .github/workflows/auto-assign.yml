@@ -1,0 +1,107 @@
+name: Auto Assign
+
+on:
+  pull_request:
+    types: [opened, ready_for_review]
+  issues:
+    types: [opened]
+
+permissions:
+  issues: write
+  pull-requests: write
+
+jobs:
+  auto-assign-pr:
+    if: github.event_name == 'pull_request' && !github.event.pull_request.draft
+    runs-on: ubuntu-latest
+    steps:
+      - name: Auto-assign PR to author
+        uses: actions/github-script@v7
+        with:
+          script: |
+            // Assign the PR to its author
+            await github.rest.issues.addAssignees({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.payload.pull_request.number,
+              assignees: [context.payload.pull_request.user.login]
+            });
+
+      - name: Request review from team
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const author = context.payload.pull_request.user.login;
+
+            // Define reviewers based on changed files
+            const files = await github.rest.pulls.listFiles({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: context.payload.pull_request.number
+            });
+
+            const reviewers = new Set();
+
+            // Add logic for file-based reviewer assignment
+            for (const file of files.data) {
+              // Example: if colorscheme files changed, request review from colorscheme maintainer
+              if (file.filename.includes('colors/') || file.filename.includes('palette/')) {
+                // Add your colorscheme reviewer here
+                // reviewers.add('username');
+              }
+
+              // Example: if extras changed
+              if (file.filename.includes('extras/')) {
+                // Add your extras reviewer here
+                // reviewers.add('username');
+              }
+            }
+
+            // Remove author from reviewers
+            reviewers.delete(author);
+
+            // Request reviews (uncomment when you have reviewers configured)
+            // if (reviewers.size > 0) {
+            //   await github.rest.pulls.requestReviewers({
+            //     owner: context.repo.owner,
+            //     repo: context.repo.repo,
+            //     pull_number: context.payload.pull_request.number,
+            //     reviewers: Array.from(reviewers)
+            //   });
+            // }
+
+  auto-assign-issue:
+    if: github.event_name == 'issues'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Auto-assign issue based on labels
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const labels = context.payload.issue.labels.map(label => label.name);
+            const assignees = [];
+
+            // Define maintainers for specific areas
+            // Uncomment and customize these when you have team members
+
+            // if (labels.includes('bug')) {
+            //   assignees.push('bug-maintainer-username');
+            // }
+
+            // if (labels.includes('colorscheme')) {
+            //   assignees.push('colorscheme-maintainer-username');
+            // }
+
+            // if (labels.includes('documentation')) {
+            //   assignees.push('docs-maintainer-username');
+            // }
+
+            // Assign if we have assignees
+            // if (assignees.length > 0) {
+            //   await github.rest.issues.addAssignees({
+            //     owner: context.repo.owner,
+            //     repo: context.repo.repo,
+            //     issue_number: context.payload.issue.number,
+            //     assignees: assignees
+            //   });
+            // }
