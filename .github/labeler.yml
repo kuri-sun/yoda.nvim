@@ -1,0 +1,41 @@
+# Auto-labeler configuration for PRs based on files changed
+
+documentation:
+  - changed-files:
+    - any-glob-to-any-file: ['**/*.md', 'docs/**/*']
+
+lua:
+  - changed-files:
+    - any-glob-to-any-file: ['**/*.lua']
+
+colorscheme:
+  - changed-files:
+    - any-glob-to-any-file: ['colors/**/*', 'lua/yoda/colors/**/*', 'lua/yoda/palette/**/*']
+
+extras:
+  - changed-files:
+    - any-glob-to-any-file: ['extras/**/*']
+
+oh-my-zsh:
+  - changed-files:
+    - any-glob-to-any-file: ['extras/oh-my-zsh/**/*']
+
+kitty:
+  - changed-files:
+    - any-glob-to-any-file: ['extras/kitty/**/*']
+
+wezterm:
+  - changed-files:
+    - any-glob-to-any-file: ['extras/wezterm/**/*']
+
+alacritty:
+  - changed-files:
+    - any-glob-to-any-file: ['extras/alacritty/**/*']
+
+github-actions:
+  - changed-files:
+    - any-glob-to-any-file: ['.github/**/*']
+
+dependencies:
+  - changed-files:
+    - any-glob-to-any-file: ['package.json', 'package-lock.json', 'yarn.lock']
