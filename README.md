@@ -4,6 +4,7 @@
 
 <p align="center">
     <img width="300" height="300" alt="lightsaber" src="assets/logo.png" />
+    <img width="300" height="300" alt="lightsaber" src="assets/preview1.png" />
 </p>
 
 <br/>
