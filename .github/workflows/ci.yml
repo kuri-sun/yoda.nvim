@@ -19,7 +19,7 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           version: latest
-          args: --check lua/ colors/ ci/
+          args: --check lua/ colors/
 
       - name: Install Lua and luacheck
         run: |
@@ -94,5 +94,5 @@ jobs:
 
       - name: Test Lua modules
         run: |
-          # Require core modules headlessly via Lua file
-          nvim --headless --noplugin -u NONE -c "set runtimepath+=$PWD" -l ci/require_modules.lua
+          # Require core modules headlessly
+          nvim --headless --noplugin -u NONE -c "set runtimepath+=$PWD" -c "lua require('yoda')" -c "qa!"
