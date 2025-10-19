@@ -153,5 +153,6 @@ require('lualine').setup {
 
 - **[Lazygit](extras/lazygit/)**
 - **[Alacritty](extras/alacritty/)**
+- **[Kitty](extras/kitty/)**
 - **[Tmux](extras/tmux/)**
 - **[Oh My Zsh](extras/oh-my-zsh/)**
