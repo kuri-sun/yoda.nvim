@@ -131,7 +131,7 @@ jobs:
             - 📅 Added release date and version info
             - 🏷️ Categorized changes by type (feat/fix/etc.)
 
-            > *"Always pass on what you have learned."* - Master Yoda
+            > *"Always pass on what you have learned."* - Yoda
 
             🤖 This PR was created automatically by the release workflow.
           branch: chore/changelog-${{ steps.version.outputs.version }}
