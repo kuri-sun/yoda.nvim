@@ -6,9 +6,7 @@
     <img width="300" height="300" alt="lightsaber" src="assets/logo.png" />
 </p>
 
-<p align="center">
-    <img width="300" height="300" alt="lightsaber" src="assets/preview1.png" />
-</p>
+<img width="100%" alt="lightsaber" src="assets/preview1.png" />
 
 <br/>
 
