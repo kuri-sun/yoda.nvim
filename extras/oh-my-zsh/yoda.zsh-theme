@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 # ──────────────────────────────────────────────
-# Yoda Theme for Oh My Zsh
+# Yoda Theme for Oh My Zsh — Powerlevel10k Style
 # ──────────────────────────────────────────────
 
 # Color definitions from yoda.nvim palette
@@ -16,7 +16,10 @@ local yoda_pink="%F{218}"      # Pink (#e6a3d0)
 local yoda_blue="%F{74}"       # Blue interface (#4fa8d8)
 local yoda_string_green="%F{194}"  # String green (#b9f6ca)
 local yoda_brown="%F{180}"     # Brown (#d4a574)
+local yoda_bg_dark="%K{232}"   # Dark background
+local yoda_bg_light="%K{234}"  # Slightly lighter background
 local reset_color="%f"
+local reset_bg="%k"
 
 # Symbols
 local prompt_symbol="❯"
@@ -29,11 +32,43 @@ local git_renamed_symbol="»"
 local git_unmerged_symbol="‡"
 local git_ahead_symbol="⇡"
 local git_behind_symbol="⇣"
+local segment_separator=""
+local segment_separator_reverse=""
+
+# Function to detect OS and return appropriate icon
+function os_icon() {
+    local os_symbol=""
+    case "$(uname -s)" in
+        Darwin)
+            os_symbol=""  # macOS logo
+            ;;
+        Linux)
+            if [[ -n "$WSL_DISTRO_NAME" ]] || grep -qi microsoft /proc/version 2>/dev/null; then
+                os_symbol=""  # Windows WSL
+            elif [[ -f /etc/arch-release ]]; then
+                os_symbol="󰣇"  # Arch Linux
+            elif [[ -f /etc/debian_version ]]; then
+                os_symbol=""  # Debian/Ubuntu
+            elif [[ -f /etc/redhat-release ]]; then
+                os_symbol=""  # RedHat/Fedora/CentOS
+            else
+                os_symbol=""  # Generic Linux
+            fi
+            ;;
+        CYGWIN*|MINGW*|MSYS*)
+            os_symbol=""  # Windows
+            ;;
+        *)
+            os_symbol="⚡"  # Unknown
+            ;;
+    esac
+    echo "%K{235}%F{46} ${os_symbol} %f%k%F{235}${segment_separator}%f"
+}
 
 # Git info
-ZSH_THEME_GIT_PROMPT_PREFIX="${yoda_subtle}(${yoda_subtle}"
-ZSH_THEME_GIT_PROMPT_SUFFIX="${yoda_subtle})${reset_color} "
-ZSH_THEME_GIT_PROMPT_DIRTY=" ${yoda_brown}${git_dirty_symbol}"
+ZSH_THEME_GIT_PROMPT_PREFIX="${yoda_subtle}${yoda_subtle}"
+ZSH_THEME_GIT_PROMPT_SUFFIX="${reset_color}"
+ZSH_THEME_GIT_PROMPT_DIRTY=" ${yoda_yellow}${git_dirty_symbol}"
 ZSH_THEME_GIT_PROMPT_CLEAN=" ${yoda_green}${git_clean_symbol}"
 
 # Git status
@@ -45,36 +80,58 @@ ZSH_THEME_GIT_PROMPT_UNMERGED="${yoda_red}${git_unmerged_symbol}"
 ZSH_THEME_GIT_PROMPT_AHEAD="${yoda_cyan}${git_ahead_symbol}"
 ZSH_THEME_GIT_PROMPT_BEHIND="${yoda_cyan}${git_behind_symbol}"
 
-# Virtual environment
-ZSH_THEME_VIRTUALENV_PREFIX="${yoda_dim}("
-ZSH_THEME_VIRTUALENV_SUFFIX=") ${reset_color}"
-
-# Function to display Python virtual environment
+# Function to display Python virtual environment with background
 function virtualenv_prompt_info() {
     if [[ -n "$VIRTUAL_ENV" ]]; then
-        echo "${ZSH_THEME_VIRTUALENV_PREFIX}${VIRTUAL_ENV:t}${ZSH_THEME_VIRTUALENV_SUFFIX}"
+        echo "%K{24}%F{255}  ${VIRTUAL_ENV:t} %f%k%F{24}${segment_separator}%f"
     fi
 }
 
-# Function to get current directory (truncated)
+# Function to display Node version with background
+function node_prompt_info() {
+    if command -v node &> /dev/null && [[ -f package.json ]]; then
+        echo "%K{22}%F{46}  $(node -v) %f%k%F{22}${segment_separator}%f"
+    fi
+}
+
+# Function to get current directory (truncated) with background
 function get_pwd() {
-    echo "${yoda_string_green}%~${reset_color}"
+    echo "%K{237}%F{194}  %~  %f%k%F{237}${segment_separator}%f"
 }
 
-# Function to get user and host for SSH sessions
+# Function to get user and host
 function user_host() {
+    local user_host_string=""
     if [[ -n "$SSH_CONNECTION" ]]; then
-        echo "${yoda_pink}%n${yoda_dim}@${yoda_pink}%m${reset_color} "
+        # Show full user@host for SSH
+        user_host_string="${yoda_pink}%n${yoda_dim}@${yoda_pink}%m ${reset_color}"
+    else
+        # Don't show username for local sessions (minimal)
+        user_host_string=""
+    fi
+    echo "$user_host_string"
+}
+
+# Function to display git info if in a git repo with background
+function git_prompt_segment() {
+    if git rev-parse --git-dir > /dev/null 2>&1; then
+        local git_info=$(git_prompt_info)
+        echo "%K{239}%F{108}  ${git_info}  %f%k%F{239}${segment_separator}%f"
     fi
 }
 
-# Main prompt
-PROMPT='
-$(user_host)$(get_pwd) $(git_prompt_info)$(virtualenv_prompt_info)
-${yoda_accent}${prompt_symbol}${reset_color} '
+# Function to get status code indicator
+function status_indicator() {
+    echo "%(?.${yoda_green}.${yoda_red})${prompt_symbol}${reset_color}"
+}
 
-# Right prompt (optional - shows time)
-RPROMPT='${yoda_dim}%T${reset_color}'
+# Main prompt (multi-line with backgrounds)
+PROMPT='
+$(os_icon)$(get_pwd)$(git_prompt_segment)$(virtualenv_prompt_info)$(node_prompt_info)
+$(status_indicator) '
+
+# Right prompt (disabled for minimal aesthetic)
+RPROMPT=''
 
 # Secondary prompt
 PS2='${yoda_dim}%_${yoda_accent} ${prompt_symbol}${reset_color} '
