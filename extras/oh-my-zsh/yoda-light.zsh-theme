@@ -67,7 +67,7 @@ function os_icon() {
 }
 
 # Git info
-ZSH_THEME_GIT_PROMPT_PREFIX="${yoda_subtle}${yoda_subtle}"
+ZSH_THEME_GIT_PROMPT_PREFIX="${yoda_subtle}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="${reset_color}"
 ZSH_THEME_GIT_PROMPT_DIRTY=" ${yoda_yellow}${git_dirty_symbol}"
 ZSH_THEME_GIT_PROMPT_CLEAN=" ${yoda_green}${git_clean_symbol}"
@@ -116,8 +116,14 @@ function user_host() {
 # Function to display git info if in a git repo with background
 function git_prompt_segment() {
     if git rev-parse --git-dir > /dev/null 2>&1; then
-        local git_info=$(git_prompt_info)
-        echo "%K{250}%F{245}  ${git_info}  %f%k%F{250}${segment_separator}%f"
+        local branch=$(git symbolic-ref --short HEAD 2>/dev/null || git rev-parse --short HEAD 2>/dev/null)
+        local git_status=""
+        if [[ -n $(git status --porcelain 2>/dev/null) ]]; then
+            git_status=" ${yoda_yellow}${git_dirty_symbol}"
+        else
+            git_status=" ${yoda_green}${git_clean_symbol}"
+        fi
+        echo "%K{250}%F{245}  ${branch}${git_status}  %f%k%F{250}${segment_separator}%f"
     fi
 }
 

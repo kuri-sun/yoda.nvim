@@ -40,19 +40,19 @@ function os_icon() {
     local os_symbol=""
     case "$(uname -s)" in
         Darwin)
-            os_symbol=""  # macOS logo
+            os_symbol=" "  # macOS logo
             ;;
         Linux)
             if [[ -n "$WSL_DISTRO_NAME" ]] || grep -qi microsoft /proc/version 2>/dev/null; then
-                os_symbol=""  # Windows WSL
+                os_symbol=" "  # Windows WSL
             elif [[ -f /etc/arch-release ]]; then
-                os_symbol="󰣇"  # Arch Linux
+                os_symbol="󰣇 "  # Arch Linux
             elif [[ -f /etc/debian_version ]]; then
-                os_symbol=""  # Debian/Ubuntu
+                os_symbol=" "  # Debian/Ubuntu
             elif [[ -f /etc/redhat-release ]]; then
-                os_symbol=""  # RedHat/Fedora/CentOS
+                os_symbol=" "  # RedHat/Fedora/CentOS
             else
-                os_symbol=""  # Generic Linux
+                os_symbol=" "  # Generic Linux
             fi
             ;;
         CYGWIN*|MINGW*|MSYS*)
@@ -66,7 +66,7 @@ function os_icon() {
 }
 
 # Git info
-ZSH_THEME_GIT_PROMPT_PREFIX="${yoda_subtle}${yoda_subtle}"
+ZSH_THEME_GIT_PROMPT_PREFIX="${yoda_subtle}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="${reset_color}"
 ZSH_THEME_GIT_PROMPT_DIRTY=" ${yoda_yellow}${git_dirty_symbol}"
 ZSH_THEME_GIT_PROMPT_CLEAN=" ${yoda_green}${git_clean_symbol}"
@@ -115,8 +115,14 @@ function user_host() {
 # Function to display git info if in a git repo with background
 function git_prompt_segment() {
     if git rev-parse --git-dir > /dev/null 2>&1; then
-        local git_info=$(git_prompt_info)
-        echo "%K{239}%F{108}  ${git_info}  %f%k%F{239}${segment_separator}%f"
+        local branch=$(git symbolic-ref --short HEAD 2>/dev/null || git rev-parse --short HEAD 2>/dev/null)
+        local git_status=""
+        if [[ -n $(git status --porcelain 2>/dev/null) ]]; then
+            git_status=" ${yoda_yellow}${git_dirty_symbol}"
+        else
+            git_status=" ${yoda_green}${git_clean_symbol}"
+        fi
+        echo "%K{239}%F{108}  ${branch}${git_status}  %f%k%F{239}${segment_separator}%f"
     fi
 }
 
