@@ -133,7 +133,7 @@ function status_indicator() {
 
 # Main prompt (multi-line with backgrounds)
 PROMPT='
-$(os_icon)$(get_pwd)$(git_prompt_segment)$(virtualenv_prompt_info)$(node_prompt_info)
+$(os_icon)$(get_pwd)$(git_prompt_segment)$(virtualenv_prompt_info)
 $(status_indicator) '
 
 # Right prompt (disabled for minimal aesthetic)
