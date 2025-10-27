@@ -1,4 +1,4 @@
-# yoda.nvim <img width="30" height="30" alt="lightsaber" src="assets/logo.png" />
+# yoda.nvim <img width="30" height="30" alt="lightsaber" src="assets/saber.jpeg" />
 
 <br/>
 
