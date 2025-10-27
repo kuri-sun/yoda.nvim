@@ -26,7 +26,7 @@ local palettes = {
         bg_light = "#0a0d0a",
         bg_highlight = "#0f120f",
         border = "#2a3a2a",
-        selection = "#0a2218",
+        selection = "#154630", -- Brighter selection for clearer visual mode highlighting
         cursor_line = "#0a0d0a",
         line_number = "#2a3a2a",
 
