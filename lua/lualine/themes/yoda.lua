@@ -9,7 +9,7 @@ end
 
 local yoda = {
     normal = {
-        a = { fg = colors.string_green, bg = bg },
+        a = { fg = colors.bg, bg = colors.accent },
         b = { fg = colors.accent, bg = bg },
         c = { fg = colors.string_green, bg = bg },
         x = { fg = colors.string_green, bg = bg },
@@ -17,23 +17,23 @@ local yoda = {
         z = { fg = colors.string_green, bg = bg },
     },
     insert = {
-        a = { fg = colors.brown, bg = bg },
+        a = { fg = colors.bg, bg = colors.blue },
         z = { fg = colors.dim, bg = bg },
     },
     visual = {
-        a = { fg = colors.pink, bg = bg },
+        a = { fg = colors.bg, bg = colors.magenta },
         z = { fg = colors.dim, bg = bg },
     },
     replace = {
-        a = { fg = colors.error, bg = bg },
+        a = { fg = colors.bg, bg = colors.red },
         z = { fg = colors.dim, bg = bg },
     },
     command = {
-        a = { fg = colors.interface, bg = bg },
+        a = { fg = colors.bg, bg = colors.interface },
         z = { fg = colors.dim, bg = bg },
     },
     terminal = {
-        a = { fg = colors.warning, bg = bg },
+        a = { fg = colors.bg, bg = colors.yellow },
         z = { fg = colors.dim, bg = bg },
     },
     inactive = {

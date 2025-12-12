@@ -50,39 +50,39 @@ instance = "alacritty"
 # ──────────────────────────────────────────────
 
 [colors.primary]
-background = "#050705"     # ultra-dark base, matte
-foreground = "#b9f6ca"     # mint-laser text tone
+background = "#050705"
+foreground = "#b9f6ca"
 
 [colors.cursor]
 text = "#050705"
-cursor = "#00ff99"         # vivid saber core green
+cursor = "#00dd88"
 
 [colors.selection]
 text = "#050705"
-background = "#00ff99"
+background = "#00dd88"
 
 [colors.search.matches]
 foreground = "#050705"
-background = "#00ff99"
+background = "#00dd88"
 
 [colors.normal]
 black   = "#0a0d0a"
-red     = "#ff4d4d"
-green   = "#00ff99"
+red     = "#ff6666"
+green   = "#00dd88"
 yellow  = "#ffee58"
-blue    = "#00bfff"
-magenta = "#cc66ff"
-cyan    = "#00ffe1"
+blue    = "#83a1cd"
+magenta = "#83a1cd"
+cyan    = "#7dd3c0"
 white   = "#e5e5e5"
 
 [colors.bright]
-black   = "#1b1b1b"
+black   = "#7a9a8a"
 red     = "#ff6666"
-green   = "#66ffb2"
-yellow  = "#fff176"
-blue    = "#33ccff"
-magenta = "#d580ff"
-cyan    = "#80fff4"
+green   = "#00dd88"
+yellow  = "#ffee58"
+blue    = "#83a1cd"
+magenta = "#83a1cd"
+cyan    = "#7dd3c0"
 white   = "#ffffff"
 
 # ──────────────────────────────────────────────
