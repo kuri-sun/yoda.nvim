@@ -1,34 +1,5 @@
 # yoda.nvim
 
-<img width="100%" alt="lightsaber" src="assets/preview1.png" />
-
-<br/>
-
-<table width="100%">
-  <tr>
-    <th>Dark</th>
-    <th>Light</th>
-  </tr>
-  <tr>
-    <td width="50%">
-      <img src="assets/code.png" />
-    </td>
-    <td width="50%">
-      <img src="assets/code-l.png" />
-    </td>
-  </tr>
-  <tr>
-    <td width="50%">
-      <img src="assets/snacks.png" />
-    </td>
-    <td width="50%">
-      <img src="assets/snack-l.png" />
-    </td>
-  </tr>
-</table>
-
----
-
 ### ✨ Features
 
 - Muted green palette for focused, balanced editing
