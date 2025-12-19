@@ -1,6 +1,6 @@
 # yoda.nvim
 
-### ✨ Features
+### Features
 
 - Muted green palette for focused, balanced editing
 - Dark and light theme variants
@@ -8,7 +8,7 @@
 - Works with **Lazy.nvim**, **Packer**, and **Plug**
 
 <details>
-<summary><b>🔌 Supported Plugins</b></summary>
+<summary><b>Supported Plugins</b></summary>
 
 | Plugin                                                                          | Highlights                                                    |
 | ------------------------------------------------------------------------------- | ------------------------------------------------------------- |
@@ -32,7 +32,7 @@
 
 ---
 
-### 🎨 Color Palette
+### Color Palette
 
 <details>
 <summary><b>Dark Theme</b></summary>
@@ -80,7 +80,7 @@
 
 ---
 
-### 🚀 Installation
+### Installation
 
 #### **Lazy.nvim**
 
@@ -99,7 +99,7 @@ use { "kuri-sun/yoda.nvim" }
 
 ---
 
-### 🚀 Usage
+### Usage
 
 ```lua
 vim.cmd("colorscheme yoda")
@@ -107,7 +107,7 @@ vim.cmd("colorscheme yoda")
 
 ---
 
-### ⚙️ Configuration
+### Configuration
 
 ```lua
 require("yoda").setup({
@@ -162,7 +162,7 @@ require('lualine').setup {
 
 ---
 
-### 🎁 Extras
+### Extras
 
 - **[Lazygit](extras/lazygit/)**
 - **[Alacritty](extras/alacritty/)**
