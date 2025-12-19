@@ -18,13 +18,13 @@ function M.setup()
     set(0, "FloatTitle", { fg = colors.bright, bg = colors.bg_light })
 
     set(0, "Cursor", { fg = colors.bg, bg = colors.accent })
-    set(0, "CursorLine", { bg = "NONE" })
-    set(0, "CursorLineNr", { fg = colors.fg })
+    set(0, "CursorLine", { bg = colors.cursor_line })
+    set(0, "CursorLineNr", { fg = colors.fg, bg = colors.cursor_line })
     set(0, "LineNr", { fg = colors.line_number })
 
     set(0, "Visual", { bg = colors.selection })
     set(0, "VisualNOS", { bg = colors.selection })
-    set(0, "Search", { fg = colors.bg, bg = colors.accent })
+    set(0, "Search", { fg = colors.bg, bg = colors.cursor_line })
     set(0, "IncSearch", { fg = colors.bg, bg = colors.accent })
     set(0, "CurSearch", { fg = colors.bg, bg = colors.accent })
 

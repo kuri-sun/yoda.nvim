@@ -27,7 +27,7 @@ local palettes = {
         bg_highlight = "#0f120f",
         border = "#2a3a2a",
         selection = "#154630", -- Brighter selection for clearer visual mode highlighting
-        cursor_line = "#0a0d0a",
+        cursor_line = "#0f2418", -- Subtle green tint for current line (slightly more green)
         line_number = "#2a3a2a",
 
         -- Git/Diff
@@ -75,7 +75,7 @@ local palettes = {
         bg_highlight = "#dbe7e0", -- Selection/highlight bg
         border = "#b7bfc7", -- Subtle border (darker)
         selection = "#b9e3cf", -- Stronger green-tinted selection
-        cursor_line = "#e7ecea", -- Current line
+        cursor_line = "#d0e5dc", -- Current line with gentle green tint (slightly more green)
         line_number = "#8a929a", -- Gutter numbers
 
         -- Git/Diff
